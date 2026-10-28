@@ -1,0 +1,494 @@
+{
+ "n_noticias": 4418,
+ "n_textos_unicos": 4100,
+ "variables_usadas": [
+  "sens_p_documento",
+  "sens_p_media_oraciones",
+  "sens_p_max_oraciones",
+  "emo_intensidad_media",
+  "emo_intensidad_max",
+  "emo_ira_media",
+  "emo_ira_max",
+  "emo_miedo_media",
+  "emo_miedo_max",
+  "emo_sorpresa_media",
+  "emo_sorpresa_max",
+  "red_sim_max",
+  "red_sim_media",
+  "red_sim_top3",
+  "red_consecutivas_media",
+  "orto_mayusculas_sostenidas",
+  "orto_proporcion_mayusculas",
+  "orto_exclamaciones",
+  "orto_interrogaciones",
+  "orto_puntos_suspensivos",
+  "orto_comillas",
+  "ling_intensificadores",
+  "ling_pronombres_1p",
+  "ling_adjetivos_sustantivos",
+  "ling_atenuadores",
+  "ling_verbos_dicendi",
+  "ling_cifras",
+  "ling_referencias_temporales"
+ ],
+ "variables_excluidas": {
+  "sens_sd_oraciones": "dispersión: no indica más ni menos sensacionalismo",
+  "red_sim_varianza": "dispersión de similitudes, sin dirección",
+  "red_consecutivas_min": "una oración inconexa puede ser tanto manipulación como estilo informativo",
+  "emo_tristeza_media": "emoción de baja activación",
+  "emo_tristeza_max": "emoción de baja activación",
+  "emo_alegria_media": "valencia positiva",
+  "emo_alegria_max": "valencia positiva",
+  "ling_flesch_szigriszt": "legibilidad: describe complejidad, no manipulación",
+  "ling_guiraud": "riqueza léxica: sin dirección clara en la literatura en español",
+  "ling_hapax": "riqueza léxica: sin dirección clara",
+  "ling_adverbios": "sin dirección clara",
+  "ling_pronombres_3p": "sin dirección clara",
+  "ling_porcentajes": "redundante con ling_cifras",
+  "ling_palabras": "longitud",
+  "ling_oraciones": "longitud"
+ },
+ "dimensiones": {
+  "D1": {
+   "nombre": "Sensacionalismo",
+   "rasgo": "sensacionalista",
+   "variables": {
+    "sens_p_documento": 1,
+    "sens_p_media_oraciones": 1,
+    "sens_p_max_oraciones": 1
+   },
+   "justificacion": "Probabilidad de sensacionalismo del documento y de sus oraciones (JJNeila). El tono sensacionalista y la oración gatillo son rasgos recurrentes de la desinformación viral (Horne y Adalı, 2017; Hamby et al., 2023)."
+  },
+  "D2": {
+   "nombre": "Carga emocional",
+   "rasgo": "emotivo",
+   "variables": {
+    "emo_intensidad_media": 1,
+    "emo_intensidad_max": 1,
+    "emo_ira_media": 1,
+    "emo_ira_max": 1,
+    "emo_miedo_media": 1,
+    "emo_miedo_max": 1,
+    "emo_sorpresa_media": 1,
+    "emo_sorpresa_max": 1
+   },
+   "justificacion": "Intensidad emocional (1 − P(sin emoción)) y emociones de alta activación: ira, miedo y sorpresa (RoBERTuito). La desinformación explota emociones negativas de alta activación (Hamby et al., 2023). Tristeza y alegría quedan fuera por ser de baja activación o valencia positiva."
+  },
+  "D3": {
+   "nombre": "Reiteración",
+   "rasgo": "reiterativo",
+   "variables": {
+    "red_sim_max": 1,
+    "red_sim_media": 1,
+    "red_sim_top3": 1,
+    "red_consecutivas_media": 1
+   },
+   "justificacion": "Similitud semántica entre oraciones (hiiamsid), continua y sin umbrales. La repetición de una misma idea refuerza su credibilidad (efecto de verdad ilusoria; Hasher et al., 1977) y el cuerpo de las noticias falsas es más repetitivo (Horne y Adalı, 2017)."
+  },
+  "D4": {
+   "nombre": "Énfasis ortotipográfico",
+   "rasgo": "enfático",
+   "variables": {
+    "orto_mayusculas_sostenidas": 1,
+    "orto_proporcion_mayusculas": 1,
+    "orto_exclamaciones": 1,
+    "orto_interrogaciones": 1,
+    "orto_puntos_suspensivos": 1,
+    "orto_comillas": 1
+   },
+   "justificacion": "Mayúsculas sostenidas, proporción de mayúsculas, exclamaciones, interrogaciones, puntos suspensivos y comillas por palabra. Las noticias falsas usan más mayúsculas y signos de puntuación enfáticos (Horne y Adalı, 2017)."
+  },
+  "D5": {
+   "nombre": "Aserción sin respaldo",
+   "rasgo": "asertivo sin fuentes",
+   "variables": {
+    "ling_intensificadores": 1,
+    "ling_pronombres_1p": 1,
+    "ling_adjetivos_sustantivos": 1,
+    "ling_atenuadores": -1,
+    "ling_verbos_dicendi": -1,
+    "ling_cifras": -1,
+    "ling_referencias_temporales": -1
+   },
+   "justificacion": "Certeza sin respaldo: más intensificadores, pronombres de primera persona y adjetivación (+), y menos atenuadores, verbos de atribución (dijo, declaró), cifras y referencias temporales (−), que son los anclajes verificables del periodismo informativo (Zhou y Zafarani, 2020)."
+  }
+ },
+ "eleccion_k": {
+  "2": {
+   "silueta": 0.21951441949045097,
+   "estabilidad_ari_media": 0.9526230597420431,
+   "estabilidad_ari_p5": 0.9174672750261357,
+   "inercia": 12946664.361018296
+  },
+  "3": {
+   "silueta": 0.19340383351365534,
+   "estabilidad_ari_media": 0.7562286517671506,
+   "estabilidad_ari_p5": 0.41274290627762095,
+   "inercia": 11177545.434125697
+  },
+  "4": {
+   "silueta": 0.18402630870223696,
+   "estabilidad_ari_media": 0.6490699125525154,
+   "estabilidad_ari_p5": 0.3988735314042191,
+   "inercia": 9991029.505447764
+  },
+  "5": {
+   "silueta": 0.18363692910141927,
+   "estabilidad_ari_media": 0.7225782588344192,
+   "estabilidad_ari_p5": 0.5419639869573126,
+   "inercia": 9028362.802763319
+  },
+  "6": {
+   "silueta": 0.1877455186612064,
+   "estabilidad_ari_media": 0.7637784106618508,
+   "estabilidad_ari_p5": 0.5452902795716487,
+   "inercia": 8300202.294429349
+  },
+  "7": {
+   "silueta": 0.18323052393165148,
+   "estabilidad_ari_media": 0.6780379074915223,
+   "estabilidad_ari_p5": 0.48610156800858556,
+   "inercia": 7742396.556940367
+  },
+  "8": {
+   "silueta": 0.1823527124354857,
+   "estabilidad_ari_media": 0.5588550315124482,
+   "estabilidad_ari_p5": 0.42291936344024933,
+   "inercia": 7279223.479531259
+  }
+ },
+ "k_elegido": 3,
+ "regla_k": "k entre 3 y 6; mayor silueta entre los k con estabilidad ARI media >= 0,75 (30 remuestreos bootstrap)",
+ "regla_nombres": "Alarmista / Viral = mayor media de D1, D2 y D4; de los otros dos, Institucional / Técnico = menor D1 + D2 y menor D5 (más anclajes verificables); Opinión / Crónica = el restante, que además debe tener menor D3 (menos reiteración).",
+ "estilos": [
+  {
+   "nombre": "Estilo 1: Institucional / Técnico",
+   "lema": "Tono formal y factual, con ideas clave reiteradas y fuentes citadas.",
+   "nombre_en": "Official / Technical Bulletin",
+   "perfil": "Reiterativo, sin sensacionalismo, carga emocional ni aserción sin fuentes",
+   "centro": {
+    "D1": 25.4,
+    "D2": 28.8,
+    "D3": 62.6,
+    "D4": 54.2,
+    "D5": 35.5
+   },
+   "iml_centro": 41.3,
+   "n": 1602,
+   "proporcion": 0.3907317073170732,
+   "pertenencia_media": 45.8810861423221,
+   "falsas": 555,
+   "tasa_falsas": 0.3464419475655431,
+   "por_region": {
+    "América Latina": 897,
+    "España": 705
+   }
+  },
+  {
+   "nombre": "Estilo 2: Opinión / Crónica",
+   "lema": "Relato o comentario fluido, subjetivo pero con escritura estándar.",
+   "nombre_en": "Opinion / Direct Narrative",
+   "perfil": "Moderado, sin reiteración ni énfasis ortotipográfico",
+   "centro": {
+    "D1": 57.0,
+    "D2": 57.4,
+    "D3": 28.3,
+    "D4": 25.9,
+    "D5": 59.8
+   },
+   "iml_centro": 45.7,
+   "n": 1318,
+   "proporcion": 0.32146341463414635,
+   "pertenencia_media": 44.083004552352044,
+   "falsas": 609,
+   "tasa_falsas": 0.4620637329286798,
+   "por_region": {
+    "España": 930,
+    "América Latina": 388
+   }
+  },
+  {
+   "nombre": "Estilo 3: Alarmista / Viral",
+   "lema": "Alto dramatismo, tono emocional y énfasis visual (mayúsculas y signos).",
+   "nombre_en": "Tabloid / Viral Alarm",
+   "perfil": "Sensacionalista, emotivo y enfático",
+   "centro": {
+    "D1": 75.5,
+    "D2": 70.4,
+    "D3": 57.1,
+    "D4": 71.3,
+    "D5": 58.7
+   },
+   "iml_centro": 66.6,
+   "n": 1180,
+   "proporcion": 0.28780487804878047,
+   "pertenencia_media": 45.29830508474576,
+   "falsas": 672,
+   "tasa_falsas": 0.5694915254237288,
+   "por_region": {
+    "América Latina": 756,
+    "España": 424
+   }
+  }
+ ],
+ "correlacion_dimensiones_spearman": {
+  "D1": {
+   "D1": 1.0,
+   "D2": 0.506,
+   "D3": -0.177,
+   "D4": 0.133,
+   "D5": 0.298
+  },
+  "D2": {
+   "D1": 0.506,
+   "D2": 1.0,
+   "D3": -0.101,
+   "D4": -0.014,
+   "D5": 0.128
+  },
+  "D3": {
+   "D1": -0.177,
+   "D2": -0.101,
+   "D3": 1.0,
+   "D4": 0.165,
+   "D5": -0.064
+  },
+  "D4": {
+   "D1": 0.133,
+   "D2": -0.014,
+   "D3": 0.165,
+   "D4": 1.0,
+   "D5": -0.08
+  },
+  "D5": {
+   "D1": 0.298,
+   "D2": 0.128,
+   "D3": -0.064,
+   "D4": -0.08,
+   "D5": 1.0
+  }
+ },
+ "direccion_empirica": {
+  "sens_p_documento": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.6174003489303064,
+   "coincide": true
+  },
+  "sens_p_media_oraciones": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.6007158556394682,
+   "coincide": true
+  },
+  "sens_p_max_oraciones": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.5927209394751225,
+   "coincide": true
+  },
+  "emo_intensidad_media": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.5680163899089279,
+   "coincide": true
+  },
+  "emo_intensidad_max": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.5613578691193791,
+   "coincide": true
+  },
+  "emo_ira_media": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.5709396194677321,
+   "coincide": true
+  },
+  "emo_ira_max": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.5702411093019855,
+   "coincide": true
+  },
+  "emo_miedo_media": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.5399718142066406,
+   "coincide": true
+  },
+  "emo_miedo_max": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.5368919701763706,
+   "coincide": true
+  },
+  "emo_sorpresa_media": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.5400110279683135,
+   "coincide": true
+  },
+  "emo_sorpresa_max": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.5385764779017221,
+   "coincide": true
+  },
+  "red_sim_max": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.4531597903841032,
+   "coincide": false
+  },
+  "red_sim_media": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.4682976888879071,
+   "coincide": false
+  },
+  "red_sim_top3": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.45014469332386775,
+   "coincide": false
+  },
+  "red_consecutivas_media": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.4758436010839357,
+   "coincide": false
+  },
+  "orto_mayusculas_sostenidas": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.5311915402203284,
+   "coincide": true
+  },
+  "orto_proporcion_mayusculas": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.4961157927049893,
+   "coincide": false
+  },
+  "orto_exclamaciones": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.5119760752750256,
+   "coincide": true
+  },
+  "orto_interrogaciones": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.5222990378915603,
+   "coincide": true
+  },
+  "orto_puntos_suspensivos": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.5156828583416092,
+   "coincide": true
+  },
+  "orto_comillas": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.4924924892414759,
+   "coincide": false
+  },
+  "ling_intensificadores": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.5131463534569697,
+   "coincide": true
+  },
+  "ling_pronombres_1p": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.5502138232599676,
+   "coincide": true
+  },
+  "ling_adjetivos_sustantivos": {
+   "direccion_a_priori": 1,
+   "auc_falsa": 0.49527558373172587,
+   "coincide": false
+  },
+  "ling_atenuadores": {
+   "direccion_a_priori": -1,
+   "auc_falsa": 0.5158350221714127,
+   "coincide": false
+  },
+  "ling_verbos_dicendi": {
+   "direccion_a_priori": -1,
+   "auc_falsa": 0.4687991976335096,
+   "coincide": true
+  },
+  "ling_cifras": {
+   "direccion_a_priori": -1,
+   "auc_falsa": 0.4130289286896541,
+   "coincide": true
+  },
+  "ling_referencias_temporales": {
+   "direccion_a_priori": -1,
+   "auc_falsa": 0.4317893455968961,
+   "coincide": true
+  }
+ },
+ "asociacion_veracidad": {
+  "D1": {
+   "auc_falsa": 0.6116184842606065,
+   "media_falsas": 56.163888888888884,
+   "media_reales": 45.00176678445229
+  },
+  "D2": {
+   "auc_falsa": 0.5648619675589122,
+   "media_falsas": 53.581644880174295,
+   "media_reales": 47.09553886925794
+  },
+  "D3": {
+   "auc_falsa": 0.4543645638467401,
+   "media_falsas": 47.48110021786492,
+   "media_reales": 52.04509717314488
+  },
+  "D4": {
+   "auc_falsa": 0.520137349207449,
+   "media_falsas": 51.112581699346414,
+   "media_reales": 49.09867491166077
+  },
+  "D5": {
+   "auc_falsa": 0.5981431441834685,
+   "media_falsas": 55.41977124183006,
+   "media_reales": 45.60525618374558
+  },
+  "IML": {
+   "auc_falsa": 0.5927626792766576,
+   "media_falsas": 52.751633986928105,
+   "media_reales": 47.76872791519435
+  }
+ },
+ "tasa_falsas_global": 0.4478048780487805,
+ "proyecciones": {
+  "pca": {
+   "varianza_explicada": [
+    0.3418,
+    0.2323
+   ],
+   "cargas": {
+    "PC1": {
+     "D1": 0.652,
+     "D2": 0.578,
+     "D3": -0.281,
+     "D4": 0.0,
+     "D5": 0.403
+    },
+    "PC2": {
+     "D1": 0.205,
+     "D2": 0.128,
+     "D3": 0.552,
+     "D4": 0.787,
+     "D5": -0.13
+    }
+   }
+  },
+  "tsne": {
+   "perplejidad": 30,
+   "inicializacion": "pca"
+  },
+  "umap": {
+   "n_vecinos": 15,
+   "distancia_minima": 0.1
+  },
+  "vecindad": {
+   "k": 15,
+   "mismo_estilo": 0.8928943089430894,
+   "mismo_estilo_azar": 0.33884164187983346,
+   "misma_clase": 0.5365691056910569,
+   "misma_clase_azar": 0.5054486615110054
+  }
+ },
+ "figuras": {
+  "eleccion_k": "graficos/estilos/eleccion_numero_estilos.png",
+  "centros": "graficos/estilos/centros_estilos_discursivos.png",
+  "radar": "graficos/estilos/radar_estilos_discursivos.png",
+  "proyecciones_estilo": "graficos/estilos/proyecciones_estilo.png",
+  "proyecciones_clase": "graficos/estilos/proyecciones_clase.png",
+  "iml_clase": "graficos/estilos/distribucion_iml_por_clase.png",
+  "tamanos": "graficos/estilos/tamano_estilos_y_tasa_falsas.png"
+ }
+}

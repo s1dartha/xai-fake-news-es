@@ -1,0 +1,318 @@
+{
+  "metadata": {
+    "modelo": "VerificadoProfesional/SaBERT-Spanish-Fake-News@c092c970eda10216ea2da846813745c0074a6ca2",
+    "umbral": 0.5,
+    "n_bootstrap": 1000,
+    "predicciones": "predicciones_sabert_ampliado_4418.csv"
+  },
+  "global": {
+    "n": 4418,
+    "n_real": 2457,
+    "n_falsas": 1961,
+    "exactitud": 0.7944771389769126,
+    "f1_macro": 0.7781069062174963,
+    "precision_falsa": 0.918854415274463,
+    "recall_falsa": 0.588985211626721,
+    "f1_falsa": 0.7178371659415786,
+    "roc_auc": 0.8572727818010837,
+    "ap": 0.864538217105163,
+    "p_falsa_media": 0.40692179763911823,
+    "tasa_falsos_negativos": 0.4110147883732789,
+    "tasa_falsos_positivos": 0.04151404151404151,
+    "tn": 2355,
+    "fp": 102,
+    "fn": 806,
+    "tp": 1155,
+    "f1_macro_ic95": [
+      0.7657638227812495,
+      0.7899585918054998
+    ]
+  },
+  "regiones": {
+    "España": {
+      "n": 2354,
+      "n_real": 1264,
+      "n_falsas": 1090,
+      "exactitud": 0.897196261682243,
+      "f1_macro": 0.8946209062260215,
+      "precision_falsa": 0.9732142857142857,
+      "recall_falsa": 0.8,
+      "f1_falsa": 0.878147029204431,
+      "roc_auc": 0.9535673847404483,
+      "ap": 0.9577407672408346,
+      "p_falsa_media": 0.46190889944081465,
+      "tasa_falsos_negativos": 0.2,
+      "tasa_falsos_positivos": 0.0189873417721519,
+      "tn": 1240,
+      "fp": 24,
+      "fn": 218,
+      "tp": 872,
+      "f1_macro_ic95": [
+        0.8818562201644192,
+        0.9066854935178523
+      ]
+    },
+    "América Latina": {
+      "n": 2064,
+      "n_real": 1193,
+      "n_falsas": 871,
+      "exactitud": 0.6773255813953488,
+      "f1_macro": 0.6147216043624883,
+      "precision_falsa": 0.7839335180055401,
+      "recall_falsa": 0.3249138920780712,
+      "f1_falsa": 0.4594155844155844,
+      "roc_auc": 0.6906427947951262,
+      "ap": 0.6639873829646106,
+      "p_falsa_media": 0.3442087949059819,
+      "tasa_falsos_negativos": 0.6750861079219288,
+      "tasa_falsos_positivos": 0.06538139145012574,
+      "tn": 1115,
+      "fp": 78,
+      "fn": 588,
+      "tp": 283,
+      "f1_macro_ic95": [
+        0.5912036492761105,
+        0.6380225590822604
+      ]
+    }
+  },
+  "corpus_origen": {
+    "Edds Fixed (España)": {
+      "region": "España",
+      "n": 294,
+      "n_real": 183,
+      "n_falsas": 111,
+      "exactitud": 0.8571428571428571,
+      "f1_macro": 0.8357978723404256,
+      "precision_falsa": 0.948051948051948,
+      "recall_falsa": 0.6576576576576577,
+      "f1_falsa": 0.776595744680851,
+      "roc_auc": 0.9132082902574705,
+      "ap": 0.8896838276732184,
+      "p_falsa_media": 0.4063757823362034,
+      "tasa_falsos_negativos": 0.34234234234234234,
+      "tasa_falsos_positivos": 0.02185792349726776,
+      "tn": 179,
+      "fp": 4,
+      "fn": 38,
+      "tp": 73,
+      "f1_macro_ic95": [
+        0.787889702205149,
+        0.8784589328816995
+      ]
+    },
+    "FakeDeS 2021 (LatAm)": {
+      "region": "América Latina",
+      "n": 248,
+      "n_real": 81,
+      "n_falsas": 167,
+      "exactitud": 0.4838709677419355,
+      "f1_macro": 0.4727610948711135,
+      "precision_falsa": 0.9333333333333333,
+      "recall_falsa": 0.25149700598802394,
+      "f1_falsa": 0.39622641509433965,
+      "roc_auc": 0.7029644414873957,
+      "ap": 0.8327886017145587,
+      "p_falsa_media": 0.37954437777385,
+      "tasa_falsos_negativos": 0.7485029940119761,
+      "tasa_falsos_positivos": 0.037037037037037035,
+      "tn": 78,
+      "fp": 3,
+      "fn": 125,
+      "tp": 42,
+      "f1_macro_ic95": [
+        0.41027041967782624,
+        0.5307478230540937
+      ]
+    },
+    "Freiren Unified Corpus (España)": {
+      "region": "España",
+      "n": 2060,
+      "n_real": 1081,
+      "n_falsas": 979,
+      "exactitud": 0.9029126213592233,
+      "f1_macro": 0.9013163252498948,
+      "precision_falsa": 0.9755799755799756,
+      "recall_falsa": 0.8161389172625128,
+      "f1_falsa": 0.8887652947719689,
+      "roc_auc": 0.9604667490000464,
+      "ap": 0.9647719207546269,
+      "p_falsa_media": 0.4698344996489485,
+      "tasa_falsos_negativos": 0.18386108273748722,
+      "tasa_falsos_positivos": 0.018501387604070305,
+      "tn": 1061,
+      "fp": 20,
+      "fn": 180,
+      "tp": 799,
+      "f1_macro_ic95": [
+        0.8878456334813656,
+        0.9133370448010127
+      ]
+    },
+    "MEX-A3T (UNAM / IPN)": {
+      "region": "América Latina",
+      "n": 566,
+      "n_real": 231,
+      "n_falsas": 335,
+      "exactitud": 0.7614840989399293,
+      "f1_macro": 0.761017855634893,
+      "precision_falsa": 0.890625,
+      "recall_falsa": 0.6805970149253732,
+      "f1_falsa": 0.7715736040609137,
+      "roc_auc": 0.8450733346255735,
+      "ap": 0.8959692511898874,
+      "p_falsa_media": 0.5115532652769474,
+      "tasa_falsos_negativos": 0.3194029850746269,
+      "tasa_falsos_positivos": 0.12121212121212122,
+      "tn": 203,
+      "fp": 28,
+      "fn": 107,
+      "tp": 228,
+      "f1_macro_ic95": [
+        0.7264011437296054,
+        0.7964304620972065
+      ]
+    },
+    "Omdena LATAM (Politics Fake News Detector)": {
+      "region": "América Latina",
+      "n": 1250,
+      "n_real": 881,
+      "n_falsas": 369,
+      "exactitud": 0.6776,
+      "f1_macro": 0.4330070380287666,
+      "precision_falsa": 0.21666666666666667,
+      "recall_falsa": 0.03523035230352303,
+      "f1_falsa": 0.06060606060606061,
+      "roc_auc": 0.5324911024365635,
+      "ap": 0.3090732159395492,
+      "p_falsa_media": 0.26142463908102365,
+      "tasa_falsos_negativos": 0.964769647696477,
+      "tasa_falsos_positivos": 0.053348467650397274,
+      "tn": 834,
+      "fp": 47,
+      "fn": 356,
+      "tp": 13,
+      "f1_macro_ic95": [
+        0.412836904530013,
+        0.45093636137390347
+      ]
+    }
+  },
+  "fuentes": {
+    "https://huggingface.co/datasets/Edds/spanish-fake-news-fixed": {
+      "n": 294,
+      "n_real": 183,
+      "n_falsas": 111,
+      "exactitud": 0.8571428571428571,
+      "f1_macro": 0.8357978723404256,
+      "precision_falsa": 0.948051948051948,
+      "recall_falsa": 0.6576576576576577,
+      "f1_falsa": 0.776595744680851,
+      "roc_auc": 0.9132082902574705,
+      "ap": 0.8896838276732184,
+      "p_falsa_media": 0.4063757823362034,
+      "tasa_falsos_negativos": 0.34234234234234234,
+      "tasa_falsos_positivos": 0.02185792349726776,
+      "tn": 179,
+      "fp": 4,
+      "fn": 38,
+      "tp": 73,
+      "f1_macro_ic95": [
+        0.7901311353742062,
+        0.8792056890205658
+      ]
+    },
+    "https://huggingface.co/datasets/Freiren/Unified-and-Balanced-Spanish-Fake-News-Corpus": {
+      "n": 2060,
+      "n_real": 1081,
+      "n_falsas": 979,
+      "exactitud": 0.9029126213592233,
+      "f1_macro": 0.9013163252498948,
+      "precision_falsa": 0.9755799755799756,
+      "recall_falsa": 0.8161389172625128,
+      "f1_falsa": 0.8887652947719689,
+      "roc_auc": 0.9604667490000464,
+      "ap": 0.9647719207546269,
+      "p_falsa_media": 0.4698344996489485,
+      "tasa_falsos_negativos": 0.18386108273748722,
+      "tasa_falsos_positivos": 0.018501387604070305,
+      "tn": 1061,
+      "fp": 20,
+      "fn": 180,
+      "tp": 799,
+      "f1_macro_ic95": [
+        0.8879130861352769,
+        0.9132702730217951
+      ]
+    },
+    "https://huggingface.co/datasets/mariagrandury/fake_news_corpus_spanish": {
+      "n": 248,
+      "n_real": 81,
+      "n_falsas": 167,
+      "exactitud": 0.4838709677419355,
+      "f1_macro": 0.4727610948711135,
+      "precision_falsa": 0.9333333333333333,
+      "recall_falsa": 0.25149700598802394,
+      "f1_falsa": 0.39622641509433965,
+      "roc_auc": 0.7029644414873957,
+      "ap": 0.8327886017145587,
+      "p_falsa_media": 0.37954437777385,
+      "tasa_falsos_negativos": 0.7485029940119761,
+      "tasa_falsos_positivos": 0.037037037037037035,
+      "tn": 78,
+      "fp": 3,
+      "fn": 125,
+      "tp": 42,
+      "f1_macro_ic95": [
+        0.41187021237520105,
+        0.5339852218054764
+      ]
+    },
+    "https://github.com/jpposadas/FakeNewsCorpusSpanish (MEX-A3T - México)": {
+      "n": 566,
+      "n_real": 231,
+      "n_falsas": 335,
+      "exactitud": 0.7614840989399293,
+      "f1_macro": 0.761017855634893,
+      "precision_falsa": 0.890625,
+      "recall_falsa": 0.6805970149253732,
+      "f1_falsa": 0.7715736040609137,
+      "roc_auc": 0.8450733346255735,
+      "ap": 0.8959692511898874,
+      "p_falsa_media": 0.5115532652769474,
+      "tasa_falsos_negativos": 0.3194029850746269,
+      "tasa_falsos_positivos": 0.12121212121212122,
+      "tn": 203,
+      "fp": 28,
+      "fn": 107,
+      "tp": 228,
+      "f1_macro_ic95": [
+        0.7271035754113228,
+        0.794801590163754
+      ]
+    },
+    "https://huggingface.co/datasets/IsaacRodgz/Fake-news-latam-omdena": {
+      "n": 1250,
+      "n_real": 881,
+      "n_falsas": 369,
+      "exactitud": 0.6776,
+      "f1_macro": 0.4330070380287666,
+      "precision_falsa": 0.21666666666666667,
+      "recall_falsa": 0.03523035230352303,
+      "f1_falsa": 0.06060606060606061,
+      "roc_auc": 0.5324911024365635,
+      "ap": 0.3090732159395492,
+      "p_falsa_media": 0.26142463908102365,
+      "tasa_falsos_negativos": 0.964769647696477,
+      "tasa_falsos_positivos": 0.053348467650397274,
+      "tn": 834,
+      "fp": 47,
+      "fn": 356,
+      "tp": 13,
+      "f1_macro_ic95": [
+        0.41425255860002175,
+        0.4531381653024364
+      ]
+    }
+  }
+}
