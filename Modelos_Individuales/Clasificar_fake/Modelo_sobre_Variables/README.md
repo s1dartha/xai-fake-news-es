@@ -51,8 +51,8 @@ python Modelos_Individuales/Clasificar_fake/Modelo_sobre_Variables/Codigos/gener
 |:---|:---|:---|:---|
 | 0a, 0b | Recomendable (se usa si está disponible) | Sí, la primera vez (descarga de JJNeila, `hiiamsid` y `es_core_news_sm`) | Inferencia sobre las 4.418 noticias y sus oraciones. |
 | 1 | No | Sí, la primera vez | Con la caché de emociones presente, RoBERTuito no se ejecuta; solo se recalculan S y R en 40 noticias para verificar los valores reutilizados (CPU). |
-| 2 | No | No | 147 s en la ejecución registrada (tres familias, umbral anidado). |
-| 3 | No | No | 53 s en la ejecución registrada. |
+| 2 | No | No | 193 s en la ejecución registrada (tres familias, umbral anidado). |
+| 3 | No | No | 59 s en la ejecución registrada. |
 | 4 | No | No | Solo figuras. |
 
 **Reproducción sin GPU.** Con los CSV de origen y `cache/emociones_oraciones_robertuito.npy` (probabilidades de RoBERTuito para las 26.428 oraciones del corpus) incluidos en el repositorio, los pasos 1 a 4 se reproducen en CPU. Todas las particiones y modelos usan la semilla 42 (`config_proyecto.SEED`).
@@ -90,11 +90,11 @@ Todas se calculan sobre oraciones segmentadas con Punkt de NLTK para español, d
 
 | Modelo | F1 macro global | España | América Latina | ROC-AUC |
 |:---|---:|---:|---:|---:|
-| **Regresión logística** | **0,612** | **0,573** | 0,647 | **0,670** |
-| Bosque aleatorio | 0,570 | 0,458 | **0,679** | 0,625 |
-| *Gradient boosting* | 0,599 | 0,525 | 0,669 | 0,657 |
+| **Regresión logística** | **0,625** | **0,584** | 0,663 | **0,676** |
+| Bosque aleatorio | 0,579 | 0,461 | **0,691** | 0,635 |
+| *Gradient boosting* | 0,603 | 0,529 | 0,675 | 0,660 |
 
-Frente a la regresión logística, el bosque aleatorio queda −0,042 [−0,057; −0,025] y el *gradient boosting* −0,013 [−0,029; 0,004] (no significativo); por la regla fijada se elige la regresión logística. En América Latina los dos modelos de árboles la superan de forma significativa.
+Frente a la regresión logística, el bosque aleatorio queda −0,047 [−0,062; −0,030] y el *gradient boosting* −0,022 [−0,038; −0,007]; ambas diferencias son significativas y por la regla fijada se elige la regresión logística. En América Latina el bosque aleatorio la supera de forma significativa (+0,028 [0,011; 0,044]); el *gradient boosting* no (+0,012 [−0,007; 0,030]).
 
 ![F1 macro por escenario](Reportes/Imagenes/seleccion_modelo/f1_macro_por_escenario.png)
 
@@ -104,18 +104,18 @@ Frente a la regresión logística, el bosque aleatorio queda −0,042 [−0,057;
 
 | Configuración | F1 macro [IC 95 %] | ROC-AUC | FP | FN |
 |:---|:---:|---:|---:|---:|
-| S | 0,581 [0,566; 0,596] | 0,620 | 808 | 883 |
-| R | 0,532 [0,515; 0,546] | 0,545 | 1.051 | 863 |
+| S | 0,590 [0,576; 0,604] | 0,632 | 839 | 825 |
+| R | 0,536 [0,521; 0,552] | 0,550 | 970 | 915 |
 | E | 0,550 [0,534; 0,565] | 0,554 | 751 | 1.039 |
-| O | 0,556 [0,540; 0,571] | 0,579 | 975 | 838 |
-| L | 0,594 [0,579; 0,609] | 0,633 | 952 | 709 |
-| S+R+E | 0,587 [0,572; 0,601] | 0,634 | 777 | 887 |
-| S+R+E+O | 0,598 [0,583; 0,612] | 0,648 | 732 | 884 |
-| **Completo (43 variables)** | **0,612 [0,597; 0,626]** | **0,670** | 690 | 868 |
-| SaBERT (referencia, umbral anidado) | 0,783 [0,771; 0,796] | 0,858 | 246 | 609 |
-| Completo + SaBERT | 0,793 [0,780; 0,805] | 0,868 | 195 | 618 |
+| O | 0,555 [0,539; 0,570] | 0,579 | 974 | 841 |
+| L | 0,596 [0,581; 0,610] | 0,639 | 767 | 861 |
+| S+R+E | 0,596 [0,581; 0,610] | 0,644 | 720 | 901 |
+| S+R+E+O | 0,610 [0,594; 0,623] | 0,657 | 724 | 848 |
+| **Completo (43 variables)** | **0,625 [0,611; 0,640]** | **0,676** | 689 | 819 |
+| SaBERT (referencia, umbral anidado) | 0,780 [0,767; 0,792] | 0,860 | 231 | 634 |
+| Completo + SaBERT | 0,798 [0,786; 0,810] | 0,868 | 214 | 582 |
 
-El modelo completo supera a S+R+E en 0,024 [0,009; 0,040] y queda 0,171 puntos por debajo de SaBERT [−0,190; −0,154]. Añadir las variables a SaBERT lo mejora en 0,009 [0,001; 0,018]. Con su umbral nativo de 0,5, SaBERT obtiene 0,775 sobre los mismos textos únicos.
+El modelo completo supera a S+R+E en 0,030 [0,015; 0,044] y queda 0,155 puntos por debajo de SaBERT [−0,172; −0,137]. Añadir las variables a SaBERT lo mejora en 0,018 [0,010; 0,026]. Con su umbral nativo de 0,5, SaBERT obtiene 0,777 sobre los mismos textos únicos.
 
 ![F1 macro por configuración](Reportes/Imagenes/sin_fuga/f1_macro_por_configuracion.png)
 
@@ -125,19 +125,19 @@ El modelo completo supera a S+R+E en 0,024 [0,009; 0,040] y queda 0,171 puntos p
 
 | Partición o escenario | n | Clasificador interpretable | SaBERT |
 |:---|---:|---:|---:|
-| España (validación cruzada) | 2.059 | 0,573 | 0,899 |
-| América Latina (validación cruzada) | 2.041 | 0,647 | 0,650 |
-| América Latina sin Omdena (MEX-A3T y FakeDeS) | 791 | 0,746 | 0,707 |
-| Omdena | 1.250 | 0,509 | 0,477 |
-| España → América Latina | 2.041 | 0,561 | 0,636 |
-| América Latina → España | 2.059 | 0,537 | 0,902 |
-| Sin ver Unified | 1.765 | 0,484 | 0,912 |
-| Sin ver Edds | 294 | 0,812 | 0,832 |
-| Sin ver MEX-A3T | 566 | 0,712 | 0,755 |
-| Sin ver FakeDeS | 225 | 0,675 | 0,545 |
-| Sin ver Omdena | 1.250 | 0,482 | 0,485 |
+| España (validación cruzada) | 2.059 | 0,584 | 0,896 |
+| América Latina (validación cruzada) | 2.041 | 0,663 | 0,646 |
+| América Latina sin Omdena (MEX-A3T y FakeDeS) | 791 | 0,756 | 0,703 |
+| Omdena | 1.250 | 0,517 | 0,509 |
+| España → América Latina | 2.041 | 0,579 | 0,648 |
+| América Latina → España | 2.059 | 0,543 | 0,900 |
+| Sin ver Unified | 1.765 | 0,505 | 0,909 |
+| Sin ver Edds | 294 | 0,825 | 0,836 |
+| Sin ver MEX-A3T | 566 | 0,717 | 0,773 |
+| Sin ver FakeDeS | 225 | 0,682 | 0,559 |
+| Sin ver Omdena | 1.250 | 0,504 | 0,530 |
 
-En América Latina ambos modelos empatan (−0,003 [−0,026; 0,022]); la brecha entre regiones es −0,074 para el clasificador interpretable y 0,249 para SaBERT. El clasificador no generaliza mejor que SaBERT en la transferencia ni en la mayoría de las exclusiones; solo lo supera al excluir FakeDeS (225 textos).
+En América Latina ambos modelos empatan (+0,017 [−0,006; 0,041], no significativo); la brecha entre regiones es −0,079 para el clasificador interpretable y 0,250 para SaBERT. El clasificador no generaliza mejor que SaBERT en la transferencia ni en la mayoría de las exclusiones; solo lo supera al excluir FakeDeS (225 textos).
 
 ![F1 macro por región](Reportes/Imagenes/sin_fuga/f1_macro_por_region.png)
 
@@ -149,23 +149,23 @@ Calculado en [`Analisis_complementarios/sensibilidad_clasificador.py`](../../../
 
 | Escenario | F1 global | ROC-AUC | España | América Latina |
 |:---|---:|---:|---:|---:|
-| Protocolo original | 0,612 | 0,670 | 0,573 | 0,647 |
-| Casi duplicados (TF-IDF ≥ 0,90) en el mismo pliegue | 0,617 | 0,672 | 0,581 | 0,650 |
-| Imputación de la similitud consecutiva dentro del pliegue | 0,615 | 0,670 | 0,579 | 0,647 |
-| 23 textos compartidos asignados a FakeDeS | 0,612 | 0,670 | 0,572 | 0,648 |
-| Las tres correcciones | 0,617 | 0,672 | 0,578 | 0,652 |
+| Protocolo original | 0,625 | 0,676 | 0,584 | 0,663 |
+| Casi duplicados (TF-IDF ≥ 0,90) en el mismo pliegue | 0,626 | 0,680 | 0,590 | 0,657 |
+| Imputación de la similitud consecutiva dentro del pliegue | 0,625 | 0,676 | 0,584 | 0,663 |
+| 23 textos compartidos asignados a FakeDeS | 0,625 | 0,676 | 0,582 | 0,664 |
+| Las tres correcciones | 0,625 | 0,679 | 0,589 | 0,658 |
 
-Ninguna decisión altera los resultados más de 0,005 puntos en el F1 global; se conservan las cifras del protocolo original.
+Ninguna decisión altera los resultados más de 0,001 puntos en el F1 global; se conservan las cifras del protocolo original.
 
 ### 5.5 Coeficientes (Figura 4.24)
 
-Ajuste descriptivo con los 4.100 textos únicos y variables estandarizadas. Las variables de mayor peso son `orto_mayusculas_sostenidas` (0,505; razón de probabilidades 1,66 por desviación estándar), `emo_sorpresa_max` (0,436), `ling_guiraud` (0,398) y `sens_p_media_oraciones` (0,384). Las variables correlacionadas se reparten el efecto con signos opuestos (por ejemplo, `sens_p_max_oraciones` −0,410 frente a `sens_p_media_oraciones` 0,384) y deben leerse juntas.
+Ajuste descriptivo con los 4.100 textos únicos y variables estandarizadas. Las variables de mayor peso son `sens_p_media_oraciones` (0,596; razón de probabilidades 1,81 por desviación estándar), `orto_mayusculas_sostenidas` (0,556), `ling_guiraud` (0,437) y `emo_sorpresa_max` (0,423). Las variables correlacionadas se reparten el efecto con signos opuestos (por ejemplo, `sens_p_max_oraciones` −0,552 frente a `sens_p_media_oraciones` 0,596) y deben leerse juntas.
 
 ![Coeficientes de la regresión logística](Reportes/Imagenes/seleccion_modelo/coeficientes_regresion_logistica.png)
 
 ## 6. Limitaciones
 
-1. El desempeño es modesto (F1 macro 0,612) y claramente inferior al de SaBERT en el conjunto del corpus; la homogeneidad entre regiones se debe en buena parte a su bajo desempeño en España.
+1. El desempeño es modesto (F1 macro 0,625) y claramente inferior al de SaBERT en el conjunto del corpus; la homogeneidad entre regiones se debe en buena parte a su bajo desempeño en España.
 2. Los coeficientes describen asociaciones en este corpus, no causas.
 3. Las variables de sensacionalismo y emociones proceden de instrumentos que no alcanzaron el criterio de aceptación (Subsección 4.2.1) y heredan su error de medición.
 4. Región y fuente están confundidas: cada fuente pertenece a una sola región (Subsección 3.2.2).

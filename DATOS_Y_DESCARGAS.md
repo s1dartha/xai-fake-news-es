@@ -32,6 +32,7 @@ Archivos incluidos en `Modelos_Individuales/Clasificar_fake/Dataset/`:
 4. **Región por fuente.** Unified y Edds se asignan a España; FakeDeS, MEX-A3T y Omdena, a América Latina.
 5. **Ampliación sin redundancia.** Solo se añaden noticias de MEX-A3T y Omdena cuyo texto normalizado (minúsculas, sin espacios en los extremos) no esté ya en el corpus base. Los 2 registros de Kaggle no entran en el corpus ampliado.
 6. **Duplicados.** El archivo canónico **conserva** los duplicados entre fuentes: 318 registros, porque los 294 textos de Edds y 23 de FakeDeS también están en Unified. Cada análisis que entrena o elige parámetros los elimina conservando la primera aparición, lo que deja **4.100 textos únicos**.
+7. **Tildes en NFC al medir.** Casi todos los textos de Omdena (1.249 de 1.250) y 3 de Unified vienen con las tildes en Unicode descompuesto (NFD). El archivo se conserva tal cual, pero la extracción de variables, el auditor y SaBERT normalizan el texto a NFC antes de medir ([`Analisis_complementarios/corregir_nfc.py`](Analisis_complementarios/README.md)).
 
 **Qué está automatizado.** `Modelos_Individuales/Clasificar_fake/Dataset/construir_corpus_latam.py` descarga MEX-A3T y Omdena y realiza los pasos 1, 2, 3 y 5 para esas fuentes. En cambio, la unión de Unified, Edds, FakeDeS y Kaggle y la asignación de región se hicieron a mano (Apéndice A.3 de la tesis).
 

@@ -13,30 +13,30 @@
   "texto": "Boooomm\nMUJERES VACUNADAS DE COVID ESTÁN MOSTRANDO EFECTOS SECUNDARIOS TÍPICOS DE CANCER DE MAMA\nLos médicos de Intermountain Healthcare’s Breast Care Centre de Utah, USA, anuncian nuevas pautas de mamografías para las mujeres vacunadas contra Covid-19 recientemente.\nLos médicos han observado inflamación de los ganglios linfáticos en las mamografías de detección de mujeres que se vacunaron recientemente contra COVID-19. \n\"Siempre que los vemos en una mamografía de detección normal, llamamos a esas pacientes porque puede significar cáncer de mama metastásico que viaja a los ganglios linfáticos o linfoma o leucemia\".\n“Con la vacuna Moderna están habiendo estos síntomas aproximadamente un 11% después de la primera dosis y un 16% después de la segunda dosis. Creemos que también es comparable para la vacuna Pfizer."
  },
  {
-  "id": "noticia_2_falsa_conspiracion_coronacirco",
-  "indice_csv": 2397,
+  "id": "noticia_2_falsa_deportes_chicharito",
+  "indice_csv": 3071,
   "clase_num": 1,
   "tipo_referencia": "Falsa (clase_num = 1 en el corpus)",
-  "titulo": "Caso 2 · índice 2397 · FakeDeS 2021 (LatAm)",
-  "origen": "FakeDeS 2021 (LatAm) (https://huggingface.co/datasets/mariagrandury/fake_news_corpus_spanish)",
-  "fuente": "https://huggingface.co/datasets/mariagrandury/fake_news_corpus_spanish",
-  "dataset_origen": "FakeDeS 2021 (LatAm)",
+  "titulo": "Caso 2 · índice 3071 · MEX-A3T (UNAM / IPN)",
+  "origen": "MEX-A3T (UNAM / IPN) (https://github.com/jpposadas/FakeNewsCorpusSpanish (MEX-A3T - México))",
+  "fuente": "https://github.com/jpposadas/FakeNewsCorpusSpanish (MEX-A3T - México)",
+  "dataset_origen": "MEX-A3T (UNAM / IPN)",
   "region": "América Latina",
   "en_corpus": true,
-  "texto": "Victoria Abril ha dejado a todo el mundo con la boca abierta con su discurso anti-plandemia a la que ha llegado a denominar coronacirco. Más claro y con más lógica no se pueden decir las cosas, se la ha entendido todo, todito. Entre otras cosas ha dicho: «Ya no son tesis conspiracionistas, llevamos un año de covid y epidemia y sabemos cuáles son los muertos. Antes iban metiendo miedo para decir que la única solución es la vacuna, pero la vacuna lleva dos meses y están testando directamente en seres humanos como cobayas». Ponemos el vídeo a continuación, no tiene desperdicio. "
+  "texto": "El Chicharito Hernández, nuevo refuerzo de los Delfines de Miami\nParece que la reestructuración general de los Delfines de Miami será mucho mayor de lo que nos imaginábamos, pues después que fuera despedido su entrenador en jefe, Joe Philbin, el dueño del equipo, Stephen Ross, anunció sus intenciones de fichar al \"Chicharito\" Javier Hernández para la próxima temporada.\n\"El futbol americano se ha centrado demasiado en el poder y la fuerza, y yo creo que es momento de cambiar de estrategia\", declaró Ross en entrevista exclusiva con El. \"Para los contrarios, no servirá de gran cosa tener a los jugadores más fuertes y con más empuje si simplemente no tienen el colmillo para quitarse la marca como Hernández. Este año, apostaremos por la chispa, y creo que éste jugador de soccer tiene lo que necesitamos. Además, lo podremos usar para patear los puntos extras y los goles de campo\".\nEl equipo inició las negociaciones para poder fichar al jugador, y se espera que comience a entrenar con el resto del equipo para este próximo mes de julio. Por ahora, no se ha dado a conocer el monto del salario que percibiría, pero se dice que sería muy superior al actual.\nVía telefónica, el Chicharito nos dijo que no estaba aún autorizado a dar demasiados detalles, pero nos prometió una exclusiva en cuanto le fuera posible hablar con más libertad."
  },
  {
-  "id": "noticia_3_verdadera_puebla_salud",
-  "indice_csv": 2361,
+  "id": "noticia_3_verdadera_medicos_zacatecoluca",
+  "indice_csv": 3653,
   "clase_num": 0,
   "tipo_referencia": "Verdadera (clase_num = 0 en el corpus)",
-  "titulo": "Caso 3 · índice 2361 · FakeDeS 2021 (LatAm)",
-  "origen": "FakeDeS 2021 (LatAm) (https://huggingface.co/datasets/mariagrandury/fake_news_corpus_spanish)",
-  "fuente": "https://huggingface.co/datasets/mariagrandury/fake_news_corpus_spanish",
-  "dataset_origen": "FakeDeS 2021 (LatAm)",
+  "titulo": "Caso 3 · índice 3653 · Omdena LATAM (Politics Fake News Detector)",
+  "origen": "Omdena LATAM (Politics Fake News Detector) (https://huggingface.co/datasets/IsaacRodgz/Fake-news-latam-omdena)",
+  "fuente": "https://huggingface.co/datasets/IsaacRodgz/Fake-news-latam-omdena",
+  "dataset_origen": "Omdena LATAM (Politics Fake News Detector)",
   "region": "América Latina",
   "en_corpus": true,
-  "texto": "El Gobierno de Puebla anunció que el confinamiento para evitar que colapse el sistema de salud por la pandemia de coronavirus, se extiende hasta el día 25 de enero.\n\nEn rueda de prensa, el gobernador Luis Miguel Barbosa indicó que se busca reducir la movilidad para frenar contagios, pues \"volvemos a estar en la ruta de un colapso en el sistema de salud\".\n\nIndicó que de esta forma se ratifica el llamado de alerta máxima en Puebla hasta el día 25, que implica prohibir la apertura de negocios de actividades no esenciales y siguen vigentes las medidas de restricción. En cuanto a la industria considerada como esencial el aforo permitido es de 30 por ciento.\n\nAsimismo se advirtió mayor presencia policíaca en las calles para el cumplimiento de las normas.  Jesús Ramírez, subsecretario de transparencia, indicó que todo el estado se encuentra en amarillo con tendencia ascendente, principalmente en la zona de Tehuacán. En la capital y zona metropolitana es rojo.\n\nEl secretario de salud, José Antonio Martínez, indicó que este es el segundo día más grave tras el nuevo confinamiento por COVID-19 con 310 contagios y mil 7 hospitalizados, siendo justamente ese punto el que preocupa pues en el pico de la pandemia, que fue el 20 de julio, se tuvieron mil 18 hospitalizados.\n\nDe mantenerse la tendencia, al día 14 de enero estaríamos \"a tope\" y el día 18 llegarían a mil 317 que nos pondría fuera de la capacidad instalada en materia de salud y se tendría que extender a zonas que actualmente están destinadas a atención de otras enfermedades, dijo. "
+  "texto": "El diputado Orlando Candray, del partido Arena, acompañó la petición de los médicos. Foto DEM\n\nUn grupo de médicos del Hospital Nacional de Zacatecoluca llegó ayer a la Asamblea Legislativa y pidió que el Ministerio de Salud cambie sus categorías de médicos residentes a médicos hospitalarios o consultantes.\n\nLa doctora Patricia Guzmán explicó que ya son graduados de la universidad, pero por no haber sido modificada la categoría de médicos residentes a consultantes, todavía reciben salarios de $400.\n\nExplicó que hay al menos 60 médicos en el hospital nacional de Zacatecoluca que no han sido trasladados a la categoría de médicos consultantes.\n\n“Con esta categoría de médicos residentes hacemos más de 300 horas laborales en el mes. Con esta moda­lidad a cada fin de año sufrimos acoso porque tenemos advertencias de despidos”, dijo la doctora.\n\nEl doctor y diputado Orlando Cabrera Candray, de Arena, acompañó a los médicos y firmó un proyecto de dictamen recomen­dable para presentarlo en la Comisión de Salud de Asamblea Legislativa para que sugieran que el Mi­nisterio de Salud cambie la categoría.\n\nCandray detalló que al tener la categoría de médicos residentes, los contratos de trabajo son renovados cada año. “Al ser renovados sus contratos a cada rato, ellos no tienen acceso a la banca, no pueden hacer préstamos, no pueden hipotecar nada”, ejemplificó el diputado de derecha."
  },
  {
   "id": "noticia_4_verdadera_ciencia_efe",

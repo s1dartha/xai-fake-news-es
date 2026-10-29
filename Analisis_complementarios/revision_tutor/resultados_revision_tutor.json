@@ -29,28 +29,28 @@
     "tokenizador": "VerificadoProfesional/SaBERT-Spanish-Fake-News@c092c97",
     "n_noticias": 4418,
     "mas_de_256_subpalabras_con_CLS_SEP": {
-      "n": 1497,
-      "pct": 33.88411045722046
+      "n": 1504,
+      "pct": 34.04255319148936
     },
     "mas_de_256_subpalabras_sin_especiales": {
-      "n": 1466,
-      "pct": 33.18243549117248
+      "n": 1479,
+      "pct": 33.47668628338615
     },
     "mas_de_1000_caracteres": {
-      "n": 1881,
-      "pct": 42.57582616568583
+      "n": 1863,
+      "pct": 42.16840199185152
     },
     "subpalabras": {
-      "mediana": 177.0,
+      "mediana": 179.0,
       "p25": 102.0,
-      "p75": 307.0,
-      "max": 675
+      "p75": 309.0,
+      "max": 688
     },
     "caracteres": {
-      "mediana": 854.0,
+      "mediana": 844.0,
       "p25": 494.0,
-      "p75": 1469.5,
-      "max": 2542
+      "p75": 1455.75,
+      "max": 2497
     }
   },
   "tarea3_bootstrap_tabla_4_18": {

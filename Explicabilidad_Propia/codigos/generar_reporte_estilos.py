@@ -94,11 +94,11 @@ def main():
     for e in est:
         L.append(f"| **{e['nombre']}** | {e['lema']} | {e['perfil']} | *{e['nombre_en']}* |")
     L += ["", "- **Institucional / Técnico:** el sensacionalismo y la emoción más bajos del corpus y la aserción sin respaldo más baja (más verbos de "
-          "atribución, cifras y fechas), con reiteración de las ideas clave por encima de la mediana.",
-          "- **Opinión / Crónica:** sensacionalismo y emoción algo por encima de la mediana y la aserción más subjetiva, pero con la menor reiteración "
+          "atribución, cifras y fechas), con reiteración de las ideas clave y énfasis ortotipográfico por encima de la mediana (los más altos de los tres estilos).",
+          "- **Opinión / Crónica:** sensacionalismo y emoción algo por debajo de la mediana y aserción algo por encima, pero con la menor reiteración "
           "(el texto avanza) y casi sin mayúsculas ni signos enfáticos (escritura estándar).",
-          "- **Alarmista / Viral:** el más alto en sensacionalismo, emoción y énfasis ortotipográfico; también por encima de la mediana en reiteración "
-          "y aserción.", ""]
+          "- **Alarmista / Viral:** el más alto en sensacionalismo, emoción y aserción sin respaldo; algo por encima de la mediana en énfasis ortotipográfico "
+          "y algo por debajo en reiteración.", ""]
     pr = j['proyecciones']
     var, vec = pr['pca']['varianza_explicada'], pr['vecindad']
     cargas = pr['pca']['cargas']

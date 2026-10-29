@@ -13,6 +13,7 @@ auditor para explicar en qué oraciones se concentra cada rasgo.
 import os
 import re
 import sys
+import unicodedata
 import importlib.util
 from pathlib import Path
 
@@ -155,6 +156,8 @@ class ExtractorVariables:
             return torch.softmax(mod(**enc).logits.float(), -1).cpu().numpy()
 
     def extraer(self, texto):
+        # NFC: 1.252 textos (casi todos de Omdena) traen las tildes descompuestas (NFD) y los léxicos y tokenizadores no las reconocen
+        texto = unicodedata.normalize('NFC', str(texto))
         oraciones = segmentar(texto)
         # S: sensacionalismo del documento (primeros 1.000 caracteres, 256 tokens) y por oración (128 tokens)
         p_doc = float(self._probs(self.tok_s, self.mod_s, [str(texto)[:1000]], 256)[0, self.idx_sens])

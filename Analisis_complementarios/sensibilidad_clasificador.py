@@ -41,7 +41,8 @@ UMBRAL_CASI_DUP = 0.90
 URL_FAKEDES = 'https://huggingface.co/datasets/mariagrandury/fake_news_corpus_spanish'
 URL_UNIFIED = 'https://huggingface.co/datasets/Freiren/Unified-and-Balanced-Spanish-Fake-News-Corpus'
 VARS_CONSEC = ['red_consecutivas_media', 'red_consecutivas_min']
-OBJETIVO_A = {'Global': 0.612, 'AUC': 0.670, 'España': 0.573, 'América Latina': 0.647}
+# Tras corregir_nfc.py (antes: Global 0.612, AUC 0.670, España 0.573, América Latina 0.647)
+OBJETIVO_A = {'Global': 0.625, 'AUC': 0.676, 'España': 0.584, 'América Latina': 0.663}
 
 
 # ---------------------------------------------------------------------------

@@ -23,6 +23,7 @@ actualizan únicamente sus claves en el JSON de resultados.
 """
 import sys
 import json
+import unicodedata
 from pathlib import Path
 
 import numpy as np
@@ -89,7 +90,8 @@ def tarea2():
     """Longitud del corpus ampliado en subpalabras (tokenizador de SaBERT) y en caracteres."""
     from transformers import AutoTokenizer
 
-    textos = pd.read_csv(CORPUS)["Text"].astype(str).tolist()
+    # NFC: mismo texto que ven los modelos tras corregir_nfc.py (las tildes NFD de Omdena cuentan caracteres de más)
+    textos = [unicodedata.normalize("NFC", t) for t in pd.read_csv(CORPUS)["Text"].astype(str)]
     tok = AutoTokenizer.from_pretrained(SABERT_ID, revision=SABERT_REV)
     n_sub = np.array([len(ids) for ids in tok(textos, add_special_tokens=False)["input_ids"]])
     n_car = np.array([len(t) for t in textos])

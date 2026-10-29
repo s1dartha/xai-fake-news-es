@@ -39,7 +39,7 @@ Explicamos la **probabilidad de la clase predicha**, no la de la clase «falsa»
 
 El clasificador interpretable no es diferenciable respecto del texto: entre el texto y la probabilidad hay tres modelos de lenguaje, spaCy y reglas. Por eso solo admite métodos de perturbación por oración (Tabla 3.6). En redundancia no hay cabeza de clasificación, así que no se aplican los métodos basados en atención.
 
-**Muestra (`comparar_explicabilidad.py`).** Tomamos 100 textos únicos por modelo, 25 por estrato región × clase, con semilla 42. Cada texto tiene al menos 3 oraciones y como máximo 200 palabras. El límite de 200 palabras garantiza que todos los métodos vean el texto completo dentro de las 256 subpalabras. La contrapartida es que la muestra no cubre las noticias más largas del corpus: en el corpus ampliado, el 33,9 % supera las 256 subpalabras (Subsección 4.5.5).
+**Muestra (`comparar_explicabilidad.py`).** Tomamos 100 textos únicos por modelo, 25 por estrato región × clase, con semilla 42. Cada texto tiene al menos 3 oraciones y como máximo 200 palabras. El límite de 200 palabras garantiza que todos los métodos vean el texto completo dentro de las 256 subpalabras. La contrapartida es que la muestra no cubre las noticias más largas del corpus: en el corpus ampliado, el 34,0 % supera las 256 subpalabras (Subsección 4.5.5).
 
 ## 3. Los métodos y dónde están en el código
 
@@ -215,7 +215,7 @@ Los segmentos son algo más fieles, pero un tercio no tiene verbo y no se puede 
 - el IML y cada una de sus dimensiones;
 - la probabilidad de la clase falsa del clasificador interpretable.
 
-Así, para cada oración se informa ΔIML y ΔP(falsa). En el primer caso de estudio, la misma oración (un titular en mayúsculas) es la que más eleva las dos salidas (+27,2 en el IML y +0,273 en la probabilidad).
+Así, para cada oración se informa ΔIML y ΔP(falsa). En el primer caso de estudio, la misma oración (un titular en mayúsculas) es la que más eleva las dos salidas (+26,5 en el IML y +0,272 en la probabilidad).
 
 ![Explicación por oraciones en los cuatro casos](../Analisis_complementarios/casos_estilo/casos_mexgen_oraciones.png)
 

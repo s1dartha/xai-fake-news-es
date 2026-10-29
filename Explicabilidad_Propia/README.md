@@ -41,7 +41,7 @@ python Analisis_complementarios/ejecutar_casos_originales.py       # los 4 casos
 | Script | GPU | Internet | Observaciones |
 |:---|:---|:---|:---|
 | `estilos_discursivos.py` | No | No | Solo lee la tabla de variables: percentiles, k-medias con 30 remuestreos por cada k de 2 a 8, PCA, t-SNE y UMAP (requiere `umap-learn`). |
-| `variables_texto.py`, auditor y casos | Opcional (`XAI_DISPOSITIVO=cpu` la desactiva) | Sí, la primera vez (JJNeila, `hiiamsid`, RoBERTuito, `es_core_news_sm`) | La explicación por oraciones extrae las variables K + 1 veces para un texto de K oraciones. En la ejecución registrada de los cuatro casos, cada auditoría tardó entre 2 y 14 s, sin contar la carga de los modelos. |
+| `variables_texto.py`, auditor y casos | Opcional (`XAI_DISPOSITIVO=cpu` la desactiva) | Sí, la primera vez (JJNeila, `hiiamsid`, RoBERTuito, `es_core_news_sm`) | La explicación por oraciones extrae las variables K + 1 veces para un texto de K oraciones. En la ejecución registrada de los cuatro casos, cada auditoría tardó entre 2 y 11 s, sin contar la carga de los modelos. |
 
 El IML, los estilos y sus figuras se reproducen sin GPU a partir de la tabla de variables incluida en el repositorio. Todas las operaciones aleatorias usan la semilla 42.
 
@@ -92,7 +92,7 @@ No se usan pesos ni constantes ajustadas, y la etiqueta de veracidad no intervie
 
 La importancia de cada oración es Δᵢ = f(D) − f(D sin sᵢ) (Ecuación 3.14), con oraciones delimitadas por Punkt y retiradas completas, de modo que el texto restante sigue siendo gramatical. El auditor aplica la misma extracción de variables a cada versión del texto y la usa para dos salidas: el IML (y cada dimensión) y la probabilidad de la clase falsa del clasificador interpretable. El procedimiento es determinista y requiere K + 1 extracciones.
 
-Para el componente de perfil, el auditor ajusta la regresión logística con los 4.100 textos únicos y usa como umbral la mediana de los umbrales anidados de la validación cruzada (0,49). Informa también los aportes β_j·z_j de las variables con mayor contribución. El par de oraciones más parecido se marca como «repite la misma afirmación» si supera el umbral calibrado en STS Benchmark (Tabla 4.5), único uso de umbrales de redundancia en el marco.
+Para el componente de perfil, el auditor ajusta la regresión logística con los 4.100 textos únicos y usa como umbral la mediana de los umbrales anidados de la validación cruzada (0,47). Informa también los aportes β_j·z_j de las variables con mayor contribución. El par de oraciones más parecido se marca como «repite la misma afirmación» si supera el umbral calibrado en STS Benchmark (Tabla 4.5), único uso de umbrales de redundancia en el marco.
 
 `variables_texto.py` reproduce la extracción del corpus para un texto nuevo; su función `verificar_contra_tabla()` compara los valores recalculados con los de la tabla en 30 noticias del corpus.
 
@@ -117,7 +117,7 @@ El informe contiene:
 
 - **Estilo:** D1–D5, IML, estilo dominante y secundario con su pertenencia, y el percentil de cada variable dentro de su dimensión.
 - **Dónde está cada rasgo:** la oración más sensacionalista, la más emotiva y su emoción, el par de oraciones más parecido y los marcadores encontrados (mayúsculas sostenidas, signos, intensificadores, atenuadores, verbos de atribución).
-- **Perfil:** P(falsa), predicción con el umbral 0,49 y las variables que más empujan la decisión.
+- **Perfil:** P(falsa), predicción con el umbral 0,47 y las variables que más empujan la decisión.
 - **Explicación por oraciones:** ΔIML y ΔP(falsa) de cada oración y las oraciones extremas en cada sentido. No se aplica a textos de una sola oración.
 
 Para usarlo desde Python:
@@ -137,14 +137,14 @@ El marco se diseñó para noticias en español de 70 a 370 palabras con titular 
 
 | Indicador | AUC (falsa) | Media en falsas | Media en reales |
 |:---|---:|---:|---:|
-| D1 Sensacionalismo | 0,612 | 56,2 | 45,0 |
+| D1 Sensacionalismo | 0,625 | 56,9 | 44,4 |
 | D2 Carga emocional | 0,565 | 53,6 | 47,1 |
-| D3 Reiteración | 0,454 | 47,5 | 52,0 |
+| D3 Reiteración | 0,449 | 47,2 | 52,3 |
 | D4 Énfasis ortotipográfico | 0,520 | 51,1 | 49,1 |
-| D5 Aserción sin respaldo | 0,598 | 55,4 | 45,6 |
-| **IML** | **0,593** | 52,8 | 47,8 |
+| D5 Aserción sin respaldo | 0,616 | 56,4 | 44,8 |
+| **IML** | **0,602** | 53,0 | 47,5 |
 
-La asociación existe pero es débil, y la reiteración se comporta en sentido contrario al esperado. En 20 de las 28 variables la dirección observada coincide con la fijada *a priori*; las ocho restantes (las cuatro de redundancia, `orto_proporcion_mayusculas`, `orto_comillas`, `ling_adjetivos_sustantivos` y `ling_atenuadores`) tienen AUC entre 0,45 y 0,52 y se mantienen sin cambios, porque definen el constructo.
+La asociación existe pero es débil, y la reiteración se comporta en sentido contrario al esperado. En 21 de las 28 variables la dirección observada coincide con la fijada *a priori*; las siete restantes (las cuatro de redundancia, `orto_proporcion_mayusculas`, `orto_comillas` y `ling_atenuadores`) tienen AUC entre 0,45 y 0,51 y se mantienen sin cambios, porque definen el constructo.
 
 ![Distribución del IML por clase](graficos/estilos/distribucion_iml_por_clase.png)
 
@@ -152,13 +152,13 @@ La asociación existe pero es débil, y la reiteración se comporta en sentido c
 
 | k | Silueta | ARI medio | ARI, percentil 5 |
 |---:|---:|---:|---:|
-| 2 | 0,220 | 0,953 | 0,917 |
-| **3** | **0,193** | **0,756** | 0,413 |
-| 4 | 0,184 | 0,649 | 0,399 |
-| 5 | 0,184 | 0,723 | 0,542 |
-| 6 | 0,188 | 0,764 | 0,545 |
+| 2 | 0,227 | 0,948 | 0,910 |
+| **3** | **0,197** | **0,773** | 0,401 |
+| 4 | 0,183 | 0,753 | 0,451 |
+| 5 | 0,189 | 0,746 | 0,562 |
+| 6 | 0,191 | 0,767 | 0,602 |
 
-Se eligen tres estilos. La estabilidad es **marginal**: el ARI medio apenas supera 0,75 y en el 5 % de los remuestreos menos favorables baja a 0,413. Las siluetas bajas (0,18–0,22) indican que no hay grupos naturales bien separados.
+Se eligen tres estilos: k = 3, 4 y 6 superan el ARI medio de 0,75 y k = 3 tiene la mayor silueta entre ellos. La estabilidad es **marginal**: el ARI medio supera 0,75 por poco y en el 5 % de los remuestreos menos favorables baja a 0,401. Las siluetas bajas (0,18–0,23) indican que no hay grupos naturales bien separados.
 
 ![Elección del número de estilos](graficos/estilos/eleccion_numero_estilos.png)
 
@@ -166,9 +166,9 @@ Se eligen tres estilos. La estabilidad es **marginal**: el ARI medio apenas supe
 
 | Estilo | D1 | D2 | D3 | D4 | D5 | Noticias | % del corpus | % falsas |
 |:---|---:|---:|---:|---:|---:|---:|---:|---:|
-| Institucional / Técnico | 25 | 29 | 63 | 54 | 36 | 1.602 | 39,1 % | 34,6 % |
-| Opinión / Crónica | 57 | 57 | 28 | 26 | 60 | 1.318 | 32,1 % | 46,2 % |
-| Alarmista / Viral | 76 | 70 | 57 | 71 | 59 | 1.180 | 28,8 % | 56,9 % |
+| Institucional / Técnico | 29 | 34 | 69 | 65 | 30 | 1.336 | 32,6 % | 30,6 % |
+| Opinión / Crónica | 39 | 36 | 34 | 26 | 56 | 1.218 | 29,7 % | 44,7 % |
+| Alarmista / Viral | 77 | 75 | 46 | 56 | 63 | 1.546 | 37,7 % | 57,1 % |
 
 ![Perfil de los estilos](graficos/estilos/radar_estilos_discursivos.png)
 
@@ -176,7 +176,7 @@ Se eligen tres estilos. La estabilidad es **marginal**: el ARI medio apenas supe
 
 ![Tamaño de los estilos y proporción de falsas](graficos/estilos/tamano_estilos_y_tasa_falsas.png)
 
-La proporción de falsas crece del estilo Institucional / Técnico al Alarmista / Viral (44,8 % en el corpus), pero el estilo no separa la veracidad. Los dos primeros componentes principales explican el 34 % y el 23 % de la varianza. Entre los 15 vecinos más cercanos de cada noticia, el 89 % comparte su estilo (34 % al azar), lo que se espera en buena medida por construcción, y solo el 54 % comparte su clase (51 % al azar).
+La proporción de falsas crece del estilo Institucional / Técnico al Alarmista / Viral (44,8 % en el corpus), pero el estilo no separa la veracidad. Los dos primeros componentes principales explican el 36 % y el 23 % de la varianza. Entre los 15 vecinos más cercanos de cada noticia, el 89 % comparte su estilo (34 % al azar), lo que se espera en buena medida por construcción, y solo el 54 % comparte su clase (51 % al azar).
 
 ![Proyecciones por estilo](graficos/estilos/proyecciones_estilo.png)
 
@@ -184,14 +184,14 @@ La proporción de falsas crece del estilo Institucional / Técnico al Alarmista 
 
 ## 6. Casos de estudio
 
-La versión de la tesis de los cuatro casos (Tabla 4.20; Figuras 4.25 y 4.26) se genera con [`Analisis_complementarios/ejecutar_casos_originales.py`](../Analisis_complementarios/ejecutar_casos_originales.py). Ese script toma el texto exacto de cada noticia del corpus ampliado (índices 2357, 2397, 2361 y 2), ejecuta este auditor sin cambios, añade la probabilidad fuera de pliegue del protocolo original y reutiliza las funciones de figuras de `codigos/ejecutar_casos_estilo.py`. Los resultados quedan en `Analisis_complementarios/casos_estilo/`.
+La versión de la tesis de los cuatro casos (Tabla 4.20; Figuras 4.25 y 4.26) se genera con [`Analisis_complementarios/ejecutar_casos_originales.py`](../Analisis_complementarios/ejecutar_casos_originales.py). Ese script toma el texto exacto de cada noticia del corpus ampliado (índices 2357, 3071, 3653 y 2), ejecuta este auditor sin cambios, añade la probabilidad fuera de pliegue del protocolo original y reutiliza las funciones de figuras de `codigos/ejecutar_casos_estilo.py`. Los resultados quedan en `Analisis_complementarios/casos_estilo/`.
 
 | Caso (clase en el corpus) | IML | Estilo dominante | P(falsa) [fuera de pliegue] | Oración más influyente: IML / P(falsa) |
 |:---|---:|:---|---:|:---|
-| 1. Bulo de salud con mayúsculas, FakeDeS (falsa) | 72,0 | Alarmista / Viral (54 %) | 0,79 [0,81] | O1: +27,2 / O1: +0,273 |
-| 2. Texto de tono conspiracionista, FakeDeS y Unified (falsa) | 51,9 | Opinión / Crónica (45 %) | 0,62 [0,61] | O4: +2,8 / O1: −0,133 |
-| 3. Medidas sanitarias en Puebla, FakeDeS (real) | 35,1 | Institucional / Técnico (44 %) | 0,17 [0,17] | O8: +12,9 / O1: −0,032 |
-| 4. Crónica científica de agencia, Edds (real) | 55,2 | Institucional / Técnico (45 %) | 0,28 [0,26] | O2: +10,3 / O2: −0,079 |
+| 1. Bulo de salud con mayúsculas, FakeDeS (falsa) | 72,9 | Alarmista / Viral (43 %) | 0,77 [0,79] | O1: +26,5 / O1: +0,272 |
+| 2. Fichaje inventado de un futbolista, MEX-A3T (falsa) | 39,6 | Opinión / Crónica (63 %) | 0,48 [0,49] | O1: +5,0 / O3: +0,076 |
+| 3. Reclamo laboral de médicos de un hospital público, Omdena (real) | 35,1 | Institucional / Técnico (61 %) | 0,15 [0,16] | O2: +7,7 / O4: −0,052 |
+| 4. Crónica científica de agencia, Edds (real) | 57,2 | Institucional / Técnico (54 %) | 0,28 [0,26] | O2: +10,7 / O3: −0,060 |
 
 ![Explicación por oraciones en los cuatro casos](../Analisis_complementarios/casos_estilo/casos_mexgen_oraciones.png)
 
@@ -202,7 +202,7 @@ La versión de la tesis de los cuatro casos (Tabla 4.20; Figuras 4.25 y 4.26) se
 ## 7. Limitaciones
 
 1. El IML es un índice compuesto **descriptivo y exploratorio**: resume la intensidad de marcadores de estilo que la literatura asocia con la manipulación, pero no mide la intención de manipular ni está validado como medida de ese constructo, y no tiene interpretación causal.
-2. Su asociación con la veracidad es débil (AUC 0,593), y ocho de las 28 direcciones fijadas *a priori* no coinciden con lo observado en este corpus.
+2. Su asociación con la veracidad es débil (AUC 0,602), y siete de las 28 direcciones fijadas *a priori* no coinciden con lo observado en este corpus.
 3. Los percentiles son relativos al corpus de referencia (España y América Latina, 70 a 370 palabras).
 4. Los estilos tienen silueta baja y estabilidad marginal con k = 3; son zonas de un continuo útiles para describir, no tipos discretos. Sus nombres interpretan el perfil del centro, no el género periodístico real, que no fue anotado.
 5. Las variables de sensacionalismo y emociones heredan las limitaciones de sus instrumentos, que no alcanzaron el criterio de aceptación (Subsección 4.2.1).

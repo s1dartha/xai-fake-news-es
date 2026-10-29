@@ -2,23 +2,23 @@
  "titulo": "Caso 1 · índice 2357 · FakeDeS 2021 (LatAm)",
  "perfil": {
   "dimensiones": {
-   "D1": 76.3,
+   "D1": 78.0,
    "D2": 53.9,
-   "D3": 73.8,
+   "D3": 73.5,
    "D4": 95.2,
-   "D5": 60.9
+   "D5": 64.0
   },
-  "iml": 72.0,
+  "iml": 72.9,
   "estilo": "Estilo 3: Alarmista / Viral",
   "lema_estilo": "Alto dramatismo, tono emocional y énfasis visual (mayúsculas y signos).",
   "indice_estilo": 2,
-  "pertenencia_estilo": 54.3,
+  "pertenencia_estilo": 43.0,
   "estilo_secundario": "Estilo 1: Institucional / Técnico",
-  "pertenencia_secundario": 24.2,
+  "pertenencia_secundario": 32.2,
   "pertenencias": {
-   "Estilo 1: Institucional / Técnico": 24.2,
-   "Estilo 2: Opinión / Crónica": 21.4,
-   "Estilo 3: Alarmista / Viral": 54.3
+   "Estilo 1: Institucional / Técnico": 32.2,
+   "Estilo 2: Opinión / Crónica": 24.9,
+   "Estilo 3: Alarmista / Viral": 43.0
   }
  },
  "variables_por_dimension": {
@@ -27,17 +27,17 @@
    "variables": {
     "sens_p_documento": {
      "valor": 0.9717,
-     "percentil": 83.3,
+     "percentil": 83.8,
      "direccion": 1
     },
     "sens_p_media_oraciones": {
      "valor": 0.4564,
-     "percentil": 50.1,
+     "percentil": 54.7,
      "direccion": 1
     },
     "sens_p_max_oraciones": {
      "valor": 0.9912,
-     "percentil": 88.5,
+     "percentil": 89.0,
      "direccion": 1
     }
    }
@@ -92,22 +92,22 @@
    "variables": {
     "red_sim_max": {
      "valor": 0.6454,
-     "percentil": 71.6,
+     "percentil": 70.7,
      "direccion": 1
     },
     "red_sim_media": {
      "valor": 0.3904,
-     "percentil": 59.2,
+     "percentil": 59.5,
      "direccion": 1
     },
     "red_sim_top3": {
      "valor": 0.5947,
-     "percentil": 71.6,
+     "percentil": 70.8,
      "direccion": 1
     },
     "red_consecutivas_media": {
      "valor": 0.4293,
-     "percentil": 67.3,
+     "percentil": 67.5,
      "direccion": 1
     }
    }
@@ -152,7 +152,7 @@
    "variables": {
     "ling_intensificadores": {
      "valor": 0.0,
-     "percentil": 47.7,
+     "percentil": 47.6,
      "direccion": 1
     },
     "ling_pronombres_1p": {
@@ -162,17 +162,17 @@
     },
     "ling_adjetivos_sustantivos": {
      "valor": 0.4783,
-     "percentil": 88.0,
+     "percentil": 90.1,
      "direccion": 1
     },
     "ling_atenuadores": {
      "valor": 0.0,
-     "percentil": 43.4,
+     "percentil": 42.4,
      "direccion": -1
     },
     "ling_verbos_dicendi": {
      "valor": 0.0,
-     "percentil": 37.6,
+     "percentil": 33.7,
      "direccion": -1
     },
     "ling_cifras": {
@@ -271,64 +271,64 @@
   "verbos_atribucion": []
  },
  "modelo_sobre_variables": {
-  "p_falsa": 0.787,
-  "umbral": 0.49,
+  "p_falsa": 0.769,
+  "umbral": 0.47,
   "prediccion": "falsa",
   "principales_contribuciones": [
    {
     "variable": "orto_mayusculas_sostenidas",
     "valor": 8.9431,
     "z": 4.1,
-    "contribucion_log_odds": 2.071,
+    "contribucion_log_odds": 2.279,
     "empuja_hacia": "falsa"
    },
    {
     "variable": "orto_proporcion_mayusculas",
     "valor": 0.1469,
     "z": 3.85,
-    "contribucion_log_odds": -0.563,
+    "contribucion_log_odds": -0.767,
     "empuja_hacia": "real"
    },
    {
     "variable": "sens_p_max_oraciones",
     "valor": 0.9912,
-    "z": 0.75,
-    "contribucion_log_odds": -0.307,
-    "empuja_hacia": "real"
-   },
-   {
-    "variable": "ling_adverbios",
-    "valor": 5.6911,
-    "z": 1.48,
-    "contribucion_log_odds": 0.3,
-    "empuja_hacia": "falsa"
-   },
-   {
-    "variable": "red_sim_top3",
-    "valor": 0.5947,
-    "z": 0.65,
-    "contribucion_log_odds": -0.193,
-    "empuja_hacia": "real"
-   },
-   {
-    "variable": "ling_cifras",
-    "valor": 3.252,
-    "z": 1.03,
-    "contribucion_log_odds": -0.178,
+    "z": 0.81,
+    "contribucion_log_odds": -0.446,
     "empuja_hacia": "real"
    },
    {
     "variable": "sens_sd_oraciones",
     "valor": 0.3235,
-    "z": 0.73,
-    "contribucion_log_odds": 0.162,
+    "z": 0.76,
+    "contribucion_log_odds": 0.208,
+    "empuja_hacia": "falsa"
+   },
+   {
+    "variable": "red_sim_top3",
+    "valor": 0.5947,
+    "z": 0.63,
+    "contribucion_log_odds": -0.195,
+    "empuja_hacia": "real"
+   },
+   {
+    "variable": "ling_adverbios",
+    "valor": 5.6911,
+    "z": 1.38,
+    "contribucion_log_odds": 0.19,
     "empuja_hacia": "falsa"
    },
    {
     "variable": "ling_guiraud",
     "valor": 7.1232,
     "z": -0.4,
-    "contribucion_log_odds": -0.158,
+    "contribucion_log_odds": -0.175,
+    "empuja_hacia": "real"
+   },
+   {
+    "variable": "ling_cifras",
+    "valor": 3.252,
+    "z": 1.03,
+    "contribucion_log_odds": -0.171,
     "empuja_hacia": "real"
    }
   ]
@@ -337,91 +337,91 @@
   "aplica": true,
   "segmentacion": "Punkt en español (xai_metodos.spans_oraciones)",
   "n_oraciones": 5,
-  "iml_texto": 72.02,
-  "p_falsa_texto": 0.7867,
+  "iml_texto": 72.91,
+  "p_falsa_texto": 0.769,
   "oraciones": [
    {
     "indice": 1,
     "texto": "Boooomm\nMUJERES VACUNADAS DE COVID ESTÁN MOSTRANDO EFECTOS SECUNDARIOS TÍPICOS DE CANCER DE MAMA\nLos médicos de Intermountain Healthcare’s Breast Care Centre de Utah, USA, anuncian nuevas pautas de mamografías para las mujeres vacunadas contra Covid-19 recientemente.",
-    "delta_iml": 27.25,
+    "delta_iml": 26.46,
     "delta_dimensiones": {
-     "D1": 48.0,
+     "D1": 44.02,
      "D2": 16.23,
-     "D3": 35.17,
-     "D4": 37.24,
-     "D5": -0.39
+     "D3": 35.05,
+     "D4": 37.27,
+     "D5": -0.27
     },
-    "delta_p_falsa": 0.2728
+    "delta_p_falsa": 0.2715
    },
    {
     "indice": 2,
     "texto": "Los médicos han observado inflamación de los ganglios linfáticos en las mamografías de detección de mujeres que se vacunaron recientemente contra COVID-19.",
-    "delta_iml": 8.6,
+    "delta_iml": 8.73,
     "delta_dimensiones": {
-     "D1": -3.1,
+     "D1": -3.27,
      "D2": 0.21,
-     "D3": 52.8,
-     "D4": -0.96,
-     "D5": -5.93
+     "D3": 52.56,
+     "D4": -0.93,
+     "D5": -4.9
     },
-    "delta_p_falsa": -0.0649
+    "delta_p_falsa": -0.0676
    },
    {
     "indice": 3,
     "texto": "\"Siempre que los vemos en una mamografía de detección normal, llamamos a esas pacientes porque puede significar cáncer de mama metastásico que viaja a los ganglios linfáticos o linfoma o leucemia\".",
-    "delta_iml": 4.1,
+    "delta_iml": 3.94,
     "delta_dimensiones": {
-     "D1": 3.02,
+     "D1": 2.71,
      "D2": -1.23,
-     "D3": 11.29,
-     "D4": 2.49,
-     "D5": 4.93
+     "D3": 11.02,
+     "D4": 2.46,
+     "D5": 4.73
     },
-    "delta_p_falsa": -0.0867
+    "delta_p_falsa": -0.0798
    },
    {
     "indice": 4,
     "texto": "“Con la vacuna Moderna están habiendo estos síntomas aproximadamente un 11% después de la primera dosis y un 16% después de la segunda dosis.",
-    "delta_iml": -5.19,
+    "delta_iml": -4.96,
     "delta_dimensiones": {
-     "D1": -5.88,
+     "D1": -5.76,
      "D2": -1.13,
-     "D3": -11.29,
+     "D3": -10.83,
      "D4": 0.56,
-     "D5": -8.22
+     "D5": -7.63
     },
-    "delta_p_falsa": -0.0441
+    "delta_p_falsa": -0.0615
    },
    {
     "indice": 5,
     "texto": "Creemos que también es comparable para la vacuna Pfizer.",
-    "delta_iml": -1.28,
+    "delta_iml": -1.4,
     "delta_dimensiones": {
-     "D1": -1.71,
+     "D1": -1.77,
      "D2": -2.6,
-     "D3": -9.85,
-     "D4": -0.96,
-     "D5": 8.71
+     "D3": -9.2,
+     "D4": -0.93,
+     "D5": 7.49
     },
-    "delta_p_falsa": -0.0317
+    "delta_p_falsa": -0.0384
    }
   ],
   "extremos": {
    "sube_iml": {
     "indice": 1,
-    "delta": 27.25
+    "delta": 26.46
    },
    "baja_iml": {
     "indice": 4,
-    "delta": -5.19
+    "delta": -4.96
    },
    "hacia_falsa": {
     "indice": 1,
-    "delta": 0.2728
+    "delta": 0.2715
    },
    "hacia_real": {
     "indice": 3,
-    "delta": -0.0867
+    "delta": -0.0798
    }
   }
  },
@@ -470,7 +470,7 @@
   "ling_palabras": 123.0,
   "ling_oraciones": 5.0
  },
- "segundos_auditoria": 5.5,
+ "segundos_auditoria": 16.0,
  "id": "noticia_1_falsa_salud_mayusculas",
  "tipo_referencia": "Falsa (clase_num = 1 en el corpus)",
  "origen": "FakeDeS 2021 (LatAm) (https://huggingface.co/datasets/mariagrandury/fake_news_corpus_spanish)",
@@ -481,8 +481,8 @@
  "dataset_origen": "FakeDeS 2021 (LatAm)",
  "region": "América Latina",
  "modelo_sobre_variables_fuera_de_pliegue": {
-  "p_falsa_oof": 0.8087499561234193,
-  "umbral_pliegue": 0.43,
+  "p_falsa_oof": 0.7931914332598686,
+  "umbral_pliegue": 0.46,
   "pliegue": 4,
   "prediccion_oof": "falsa",
   "idx_csv_representante": 2357,

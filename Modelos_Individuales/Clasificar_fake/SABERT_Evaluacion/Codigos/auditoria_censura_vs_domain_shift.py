@@ -24,6 +24,7 @@ Uso: python auditoria_censura_vs_domain_shift.py [--recalcular]
 import re
 import sys
 import json
+import unicodedata
 from pathlib import Path
 
 import numpy as np
@@ -83,6 +84,7 @@ class SaBERT:
         self.ref = f"{m['id']}@{m['revision']}"
 
     def p_falsa(self, textos):
+        textos = [unicodedata.normalize('NFC', str(t)) for t in textos]  # tildes NFD de Omdena (ver Analisis_complementarios/corregir_nfc.py)
         out = []
         with self.torch.inference_mode():
             for i in range(0, len(textos), BATCH):

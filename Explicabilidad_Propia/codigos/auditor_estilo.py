@@ -18,6 +18,7 @@ Para un texto entrega, sin juzgar su veracidad:
 
 import sys
 import json
+import unicodedata
 from pathlib import Path
 
 import numpy as np
@@ -150,6 +151,7 @@ class AuditorEstilo:
                              'hacia_falsa': extremo('delta_p_falsa', 1), 'hacia_real': extremo('delta_p_falsa', -1)}}
 
     def auditar(self, texto, titulo='', con_mexgen=True):
+        texto = unicodedata.normalize('NFC', str(texto))  # mismas posiciones de oración que en extraer()
         v, det = self.ex.extraer(texto)
         perfil = perfilar(v, self.ref)
         variables_por_dimension = {}

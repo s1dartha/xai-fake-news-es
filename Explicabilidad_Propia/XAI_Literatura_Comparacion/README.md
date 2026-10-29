@@ -48,6 +48,8 @@ python Analisis_complementarios/figuras_oe3_renombradas.py
 
 **Qué se reproduce sin GPU.** Con la caché y el JSON incluidos, los pasos 2 y 3 (y `--solo-consolidar`) regeneran todas las cifras y figuras de la Sección 4.3 sin cargar ningún modelo. Recalcular la caché exige cargar los cuatro modelos: el cálculo original se hizo en una GPU NVIDIA GeForce GTX 1650 (4 GB). Solo el tiempo de atribución registrado en el JSON suma unos 20 a 25 minutos por modelo neuronal; las curvas de borrado, los controles aleatorios y la prueba de Adebayo añaden muchas más evaluaciones del modelo. En el clasificador interpretable cada evaluación vuelve a extraer las 43 variables con tres modelos de lenguaje (con caché por texto).
 
+**Nota sobre la corrección de tildes (NFC).** La caché y el JSON se calcularon antes de normalizar a NFC los 1.252 textos con tildes descompuestas (casi todos de Omdena; ver `Analisis_complementarios/corregir_nfc.py`). Los pasos 2 y 3 reproducen exactamente las cifras de la tesis; recalcular la caché con el código actual daría valores algo distintos, sobre todo en el clasificador interpretable, que se reentrena con la tabla de variables corregida.
+
 ## Resultados principales
 
 Ganancia sobre el azar de la misma granularidad (media; Tabla 4.9 de la tesis, con IC en ella):

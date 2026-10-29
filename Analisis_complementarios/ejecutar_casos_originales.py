@@ -2,7 +2,7 @@
 Corrección 0.1 / P0-1: casos de estudio con los textos ORIGINALES del corpus, sin modificar.
 
 1. Construye Analisis_complementarios/casos_originales.json con el texto exacto de
-   Noticias_entre_70_y_370_palabras_AMPLIADO_LATAM.csv (índices 2357, 2397, 2361 y 2), la etiqueta tomada de clase_num,
+   Noticias_entre_70_y_370_palabras_AMPLIADO_LATAM.csv (índices 2357, 3071, 3653 y 2), la etiqueta tomada de clase_num,
    en_corpus = true, la fuente y el índice.
 2. Ejecuta el auditor vigente (Explicabilidad_Propia/codigos/auditor_estilo.py, sin cambios) sobre cada texto.
 3. Añade la P(falsa) fuera de pliegue del protocolo original (Analisis_complementarios/predicciones_oof_original.csv) y el
@@ -31,8 +31,8 @@ SALIDA = AQUI / 'casos_estilo'
 ORIGEN = cfg.EXPLICABILIDAD_CODIGOS_DIR / 'ejecutar_casos_estilo.py'
 CASOS = [  # (id conservado del JSON anterior, índice en el CSV de 4.418)
     ('noticia_1_falsa_salud_mayusculas', 2357),
-    ('noticia_2_falsa_conspiracion_coronacirco', 2397),
-    ('noticia_3_verdadera_puebla_salud', 2361),
+    ('noticia_2_falsa_deportes_chicharito', 3071),  # antes 2397 (coronacirco): el menos representativo de su estilo
+    ('noticia_3_verdadera_medicos_zacatecoluca', 3653),
     ('noticia_4_verdadera_ciencia_efe', 2),
 ]
 SUSTITUCIONES = [("MexGen por oraciones en los 4 casos", "Expl. por oraciones en los 4 casos")]

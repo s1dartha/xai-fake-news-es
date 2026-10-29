@@ -66,8 +66,8 @@ def marco_propuesto():
     h2 = alto(5, E)
     gc.caja_lista(ax, x2, y - h2 / 2, w, h2, 'Regresión logística (L2, C = 1)', [
         'imputación por mediana + estandarización', 'evaluada sin fuga: 4.100 textos únicos,',
-        'StratifiedGroupKFold(5) y umbral anidado', 'F1 macro 0,612 (SaBERT: 0,783;',
-        'variables + SaBERT: 0,793)'], 'modelo')
+        'StratifiedGroupKFold(5) y umbral anidado', 'F1 macro 0,625 (SaBERT: 0,780;',
+        'variables + SaBERT: 0,798)'], 'modelo')
     y_b = y - max(h1, h2) - 0.45
     h3 = alto(3, E)
     gc.flecha(ax, (x1, y - h1), (x1, y_b))
@@ -327,18 +327,18 @@ def evaluacion_sin_fuga():
     h3 = alto(4, E)
     gc.flecha(ax, (8.5, 4.35), (8.5, 2.6 + h3 / 2))
     gc.caja_lista(ax, 8.5, 2.6, 15, h3, 'Resultados (F1 macro, FP, FN, ROC-AUC; por región y excluyendo cada fuente)', [
-        'selección de familia: regresión logística 0,612 · gradient boosting 0,599 · bosque aleatorio 0,570',
-        'ablación por grupo: L 0,594 · S 0,581 · O 0,556 · E 0,550 · R 0,532',
-        'Completo (43 variables) 0,612 · SaBERT 0,783 · Completo + SaBERT 0,793',
+        'selección de familia: regresión logística 0,625 · gradient boosting 0,603 · bosque aleatorio 0,579',
+        'ablación por grupo: L 0,596 · S 0,590 · O 0,555 · E 0,550 · R 0,536',
+        'Completo (43 variables) 0,625 · SaBERT 0,780 · Completo + SaBERT 0,798',
         'se elige la regresión logística: el mayor F1 de las tres y explicable variable por variable'], 'salida')
     return fig
 
 
 def iml_y_estilos():
-    """Fuentes: estilos_discursivos.py y metricas_estilos_discursivos.json."""
+    """Fuentes: estilos_discursivos.py y metricas_iml_estilos_discursivos.json."""
     E = 0.6
     fig, ax = gc.lienzo_completo(19, 14.4, E)
-    gc.titulo_diagrama(ax, 0.3, 14.2, 'IML y estilos discursivos', 'estilos_discursivos.py · referencia_estilos_discursivos.json')
+    gc.titulo_diagrama(ax, 0.3, 14.2, 'IML y estilos discursivos', 'estilos_discursivos.py · referencia_iml_estilos.json')
     h = alto(3, E)
     gc.caja_lista(ax, 4.6, 11.0, 8.4, h, '28 de las 43 variables', [
         'solo las que tienen dirección fijada a priori por la literatura', '(↑ suma, ↓ resta; p. ej., más verbos de atribución = menos D5)',
@@ -354,7 +354,7 @@ def iml_y_estilos():
         'D1 Sensacionalismo (JJNeila)', 'D2 Carga emocional (RoBERTuito)', 'D3 Reiteración (hiiamsid)',
         'D4 Énfasis ortotipográfico', 'D5 Aserción sin respaldo'], 'proceso')
     gc.flecha(ax, (4.6, 5.0 - h3 / 2), (4.6, 1.5 + 0.55))
-    gc.caja_lista(ax, 4.6, 1.5, 8.4, alto(1, E), 'IML = media de D1–D5', ['AUC 0,593 frente a la veracidad: describe el estilo, no decide'], 'salida')
+    gc.caja_lista(ax, 4.6, 1.5, 8.4, alto(1, E), 'IML = media de D1–D5', ['AUC 0,602 frente a la veracidad: describe el estilo, no decide'], 'salida')
 
     gc.flecha_ruta(ax, [(4.6 + 4.2, 5.0), (10.2, 5.0), (10.2, 11.0), (11.2, 11.0)])
     h4 = alto(3, E)
@@ -371,7 +371,7 @@ def iml_y_estilos():
         f'1 · {ESTILOS[0]}: poco sensacionalismo y', 'emoción, reitera ideas clave, cita fuentes',
         f'2 · {ESTILOS[1]}: fluido y subjetivo,', 'sin énfasis visual',
         f'3 · {ESTILOS[2]}: dramático, emotivo y', 'con mayúsculas y signos'], 'salida')
-    ax.text(14.9, 0.45, 'Las noticias forman un continuo (silueta ≈ 0,19): el estilo es una pertenencia gradual, no una etiqueta.',
+    ax.text(14.9, 0.45, 'Las noticias forman un continuo (silueta ≈ 0,20): el estilo es una pertenencia gradual, no una etiqueta.',
             ha='center', fontsize=7.8, color=gc.TINTA_SUAVE, style='italic')
     return fig
 

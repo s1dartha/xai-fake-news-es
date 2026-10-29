@@ -24,7 +24,7 @@ Esta carpeta evalúa SaBERT, el mejor clasificador del corpus base (`../Modelos_
 
 Procedencia de cada fuente (URL), licencias y convención de etiquetas en [`../Dataset/README.md`](../Dataset/README.md). Modelo: `VerificadoProfesional/SaBERT-Spanish-Fake-News`, revisión `c092c970eda10216ea2da846813745c0074a6ca2`, salida de la clase falsa en el índice 0, máximo 256 subpalabras.
 
-Las probabilidades de `predicciones_sabert_ampliado_4418.csv` son una caché de inferencia. Su procedencia se verifica recalculando SaBERT con la revisión fija sobre una muestra estratificada de 60 noticias (12 por fuente, semilla 42): la diferencia absoluta máxima es de 4,9 × 10⁻⁷ y la predicción coincide en el 100 % de los casos.
+Las probabilidades de `predicciones_sabert_ampliado_4418.csv` son una caché de inferencia. Su procedencia se verifica recalculando SaBERT con la revisión fija sobre una muestra estratificada de 60 noticias (12 por fuente, semilla 42): la diferencia absoluta máxima es de 3,0 × 10⁻⁷ y la predicción coincide en el 100 % de los casos.
 
 ## 3. Cómo ejecutar
 
@@ -65,19 +65,19 @@ Calcula las métricas globales, por región, por corpus de origen y por URL de f
 
 | Grupo | Región | n | F1 macro [IC 95 %] | Exhaustividad (F) | Tasa FN | ROC-AUC |
 |:---|:---|---:|:---|---:|---:|---:|
-| Global | | 4.418 | 0,778 [0,766; 0,790] | 0,589 | 41,1 % | 0,857 |
+| Global | | 4.418 | 0,780 [0,768; 0,792] | 0,600 | 40,0 % | 0,859 |
 | España | | 2.354 | 0,895 [0,882; 0,907] | 0,800 | 20,0 % | 0,954 |
-| América Latina | | 2.064 | 0,615 [0,591; 0,638] | 0,325 | 67,5 % | 0,691 |
+| América Latina | | 2.064 | 0,623 [0,600; 0,646] | 0,349 | 65,1 % | 0,692 |
 | Unified | España | 2.060 | 0,901 [0,888; 0,913] | 0,816 | 18,4 % | 0,960 |
 | Edds | España | 294 | 0,836 [0,788; 0,878] | 0,658 | 34,2 % | 0,913 |
 | MEX-A3T | América Latina | 566 | 0,761 [0,726; 0,796] | 0,681 | 31,9 % | 0,845 |
 | FakeDeS | América Latina | 248 | 0,473 [0,410; 0,531] | 0,251 | 74,9 % | 0,703 |
-| Omdena | América Latina | 1.250 | 0,433 [0,413; 0,451] | 0,035 | 96,5 % | 0,532 |
+| Omdena | América Latina | 1.250 | 0,474 [0,449; 0,499] | 0,092 | 90,8 % | 0,549 |
 
 ![F1 macro por región y fuente](Reportes/Imagenes/f1_macro_region_corpus.png)
 
-- Los intervalos de España y América Latina no se solapan. La diferencia está en las falsas: el modelo deja pasar una de cada cinco en España y dos de cada tres en América Latina, mientras que la tasa de falsos positivos sube poco (del 1,9 % al 6,5 %).
-- En Omdena el modelo queda cerca del azar (ROC-AUC 0,532) y solo reconoce el 3,5 % de las falsas. Como el ROC-AUC también es bajo, el problema no se resolvería moviendo el umbral.
+- Los intervalos de España y América Latina no se solapan. La diferencia está en las falsas: el modelo deja pasar una de cada cinco en España y dos de cada tres en América Latina, mientras que la tasa de falsos positivos sube poco (del 1,9 % al 8,0 %).
+- En Omdena el modelo queda cerca del azar (ROC-AUC 0,549) y solo reconoce el 9,2 % de las falsas. Como el ROC-AUC también es bajo, el problema no se resolvería moviendo el umbral.
 
 ![Matrices de confusión por región](Reportes/Imagenes/matrices_confusion_region.png)
 
@@ -101,7 +101,7 @@ Calcula las métricas globales, por región, por corpus de origen y por URL de f
 | MEX-A3T y FakeDeS, sin máscaras (B) | 814 | 0,678 | 0,678 | 0,532 | 0,790 |
 | MEX-A3T, textos con máscara | 384 | 0,755 | 0,753 | 0,623 | 0,823 |
 | MEX-A3T, textos sin máscara | 182 | 0,775 | 0,746 | 0,771 | 0,863 |
-| Omdena (sin máscaras) | 1.250 | 0,678 | 0,433 | 0,035 | 0,532 |
+| Omdena (sin máscaras) | 1.250 | 0,680 | 0,474 | 0,092 | 0,549 |
 
 ![Contrafácticos de las máscaras](Reportes/Imagenes/contrafacticos_mascaras_vs_dominio.png)
 
@@ -109,7 +109,7 @@ Calcula las métricas globales, por región, por corpus de origen y por URL de f
 2. **B, retirar máscaras:** se modificaron 385 textos (384 de MEX-A3T y 1 de FakeDeS). La exactitud subió 0,1 puntos porcentuales y el ROC-AUC 0,008.
 3. **Comparación observacional:** dentro de MEX-A3T, los textos con y sin máscara tienen un F1 macro similar (0,753 y 0,746); al ser textos distintos, no aísla el efecto de las máscaras.
 
-Las máscaras mueven las métricas menos de un punto en ambas direcciones, mientras que Omdena, sin ninguna máscara, queda 0,421 por debajo de España en ROC-AUC y 0,462 en F1 macro. **La diferencia regional de SaBERT no se debe a la anonimización.** El diseño tampoco permite atribuirla a la región: cada región es un conjunto distinto de fuentes, con sus propios temas, entidades, épocas, proporciones de clase, forma de redactar y criterios de anotación.
+Las máscaras mueven las métricas menos de un punto en ambas direcciones, mientras que Omdena, sin ninguna máscara, queda 0,405 por debajo de España en ROC-AUC y 0,420 en F1 macro. **La diferencia regional de SaBERT no se debe a la anonimización.** El diseño tampoco permite atribuirla a la región: cada región es un conjunto distinto de fuentes, con sus propios temas, entidades, épocas, proporciones de clase, forma de redactar y criterios de anotación.
 
 ## 6. Limitaciones
 

@@ -181,7 +181,7 @@ def main():
          "**Generado por:** `codigos/ejecutar_casos_estilo.py` (auditor: `codigos/auditor_estilo.py`) · datos en `reportes/casos_estilo/`  ",
          "**Construcción del IML y de los estilos:** [`Reporte_Construccion_Estilos_Discursivos.md`](Reporte_Construccion_Estilos_Discursivos.md)", "",
          "> Los estilos describen la **forma** del texto, no su veracidad. La lectura del Modelo sobre Variables se muestra aparte y es la de un "
-         "clasificador con F1 macro de 0,61 en validación cruzada: no es un veredicto.", "",
+         "clasificador con F1 macro de 0,63 en validación cruzada: no es un veredicto.", "",
          gc.diagrama_md('auditoria_texto_nuevo.png', cfg.EXPLICABILIDAD_REPORTES_DIR, 'Qué ocurre al auditar un texto'),
          "## Resumen", "",
          "| Caso | Referencia | IML | D1 | D2 | D3 | D4 | D5 | Estilo dominante (pertenencia) | Segundo estilo | Modelo sobre Variables: P(falsa) |",
@@ -228,7 +228,7 @@ def main():
           "- El caso 1 forma parte del corpus de referencia; la regresión logística se ajustó con ese corpus, por lo que su P(falsa) en ese caso no es una predicción fuera de muestra.",
           "- Los casos se eligieron en la versión anterior de la tesis como ejemplos ilustrativos; no son una muestra representativa.",
           "- La lectura de los tres pilares describe el estilo del texto y lo que mueve al clasificador; no verifica los hechos. "
-          "El Modelo sobre Variables tiene F1 macro de 0,61 en validación cruzada.",
+          "El Modelo sobre Variables tiene F1 macro de 0,63 en validación cruzada.",
           "- MexGen quita oraciones completas: el texto que queda sigue siendo gramatical, pero puede perder alguna referencia (un pronombre que remitía a "
           "la oración quitada). Su fidelidad frente a otros métodos está en `XAI_Literatura_Comparacion/reportes/Reporte_Comparativo_XAI_Literatura_vs_Propia.md`.", ""]
     salida = cfg.EXPLICABILIDAD_REPORTES_DIR / 'Reporte_Casos_Estilos_Discursivos_4_Noticias.md'

@@ -115,46 +115,46 @@
  },
  "eleccion_k": {
   "2": {
-   "silueta": 0.21951441949045097,
-   "estabilidad_ari_media": 0.9526230597420431,
-   "estabilidad_ari_p5": 0.9174672750261357,
-   "inercia": 12946664.361018296
+   "silueta": 0.22704746946433985,
+   "estabilidad_ari_media": 0.9477583321676286,
+   "estabilidad_ari_p5": 0.9098614201955767,
+   "inercia": 12783932.019238036
   },
   "3": {
-   "silueta": 0.19340383351365534,
-   "estabilidad_ari_media": 0.7562286517671506,
-   "estabilidad_ari_p5": 0.41274290627762095,
-   "inercia": 11177545.434125697
+   "silueta": 0.19688079771428732,
+   "estabilidad_ari_media": 0.7726305875954709,
+   "estabilidad_ari_p5": 0.40065529368532127,
+   "inercia": 10979384.410172146
   },
   "4": {
-   "silueta": 0.18402630870223696,
-   "estabilidad_ari_media": 0.6490699125525154,
-   "estabilidad_ari_p5": 0.3988735314042191,
-   "inercia": 9991029.505447764
+   "silueta": 0.18308105222827634,
+   "estabilidad_ari_media": 0.7532163917766271,
+   "estabilidad_ari_p5": 0.4508984608169424,
+   "inercia": 9794585.293778874
   },
   "5": {
-   "silueta": 0.18363692910141927,
-   "estabilidad_ari_media": 0.7225782588344192,
-   "estabilidad_ari_p5": 0.5419639869573126,
-   "inercia": 9028362.802763319
+   "silueta": 0.18942241538548973,
+   "estabilidad_ari_media": 0.7464194374390201,
+   "estabilidad_ari_p5": 0.5623241449486087,
+   "inercia": 8877154.765162092
   },
   "6": {
-   "silueta": 0.1877455186612064,
-   "estabilidad_ari_media": 0.7637784106618508,
-   "estabilidad_ari_p5": 0.5452902795716487,
-   "inercia": 8300202.294429349
+   "silueta": 0.19113752241485668,
+   "estabilidad_ari_media": 0.7671156718680368,
+   "estabilidad_ari_p5": 0.6019325197109356,
+   "inercia": 8161222.3818641715
   },
   "7": {
-   "silueta": 0.18323052393165148,
-   "estabilidad_ari_media": 0.6780379074915223,
-   "estabilidad_ari_p5": 0.48610156800858556,
-   "inercia": 7742396.556940367
+   "silueta": 0.18390681454873037,
+   "estabilidad_ari_media": 0.6941170812491392,
+   "estabilidad_ari_p5": 0.5009972470505982,
+   "inercia": 7613398.630446344
   },
   "8": {
-   "silueta": 0.1823527124354857,
-   "estabilidad_ari_media": 0.5588550315124482,
-   "estabilidad_ari_p5": 0.42291936344024933,
-   "inercia": 7279223.479531259
+   "silueta": 0.1828717979710344,
+   "estabilidad_ari_media": 0.6111130211527128,
+   "estabilidad_ari_p5": 0.4406824149673916,
+   "inercia": 7143849.337782783
   }
  },
  "k_elegido": 3,
@@ -165,133 +165,133 @@
    "nombre": "Estilo 1: Institucional / Técnico",
    "lema": "Tono formal y factual, con ideas clave reiteradas y fuentes citadas.",
    "nombre_en": "Official / Technical Bulletin",
-   "perfil": "Reiterativo, sin sensacionalismo, carga emocional ni aserción sin fuentes",
+   "perfil": "Reiterativo y enfático, sin sensacionalismo, carga emocional ni aserción sin fuentes",
    "centro": {
-    "D1": 25.4,
-    "D2": 28.8,
-    "D3": 62.6,
-    "D4": 54.2,
-    "D5": 35.5
+    "D1": 29.0,
+    "D2": 33.9,
+    "D3": 69.2,
+    "D4": 65.1,
+    "D5": 29.5
    },
-   "iml_centro": 41.3,
-   "n": 1602,
-   "proporcion": 0.3907317073170732,
-   "pertenencia_media": 45.8810861423221,
-   "falsas": 555,
-   "tasa_falsas": 0.3464419475655431,
+   "iml_centro": 45.4,
+   "n": 1336,
+   "proporcion": 0.3258536585365854,
+   "pertenencia_media": 46.726197604790414,
+   "falsas": 409,
+   "tasa_falsas": 0.3061377245508982,
    "por_region": {
-    "América Latina": 897,
-    "España": 705
+    "América Latina": 937,
+    "España": 399
    }
   },
   {
    "nombre": "Estilo 2: Opinión / Crónica",
    "lema": "Relato o comentario fluido, subjetivo pero con escritura estándar.",
    "nombre_en": "Opinion / Direct Narrative",
-   "perfil": "Moderado, sin reiteración ni énfasis ortotipográfico",
+   "perfil": "Sobrio (sin sensacionalismo, carga emocional, reiteración ni énfasis ortotipográfico)",
    "centro": {
-    "D1": 57.0,
-    "D2": 57.4,
-    "D3": 28.3,
-    "D4": 25.9,
-    "D5": 59.8
+    "D1": 39.1,
+    "D2": 36.3,
+    "D3": 33.5,
+    "D4": 26.4,
+    "D5": 55.6
    },
-   "iml_centro": 45.7,
-   "n": 1318,
-   "proporcion": 0.32146341463414635,
-   "pertenencia_media": 44.083004552352044,
-   "falsas": 609,
-   "tasa_falsas": 0.4620637329286798,
+   "iml_centro": 38.2,
+   "n": 1218,
+   "proporcion": 0.2970731707317073,
+   "pertenencia_media": 44.03316912972085,
+   "falsas": 544,
+   "tasa_falsas": 0.4466338259441708,
    "por_region": {
-    "España": 930,
-    "América Latina": 388
+    "España": 896,
+    "América Latina": 322
    }
   },
   {
    "nombre": "Estilo 3: Alarmista / Viral",
    "lema": "Alto dramatismo, tono emocional y énfasis visual (mayúsculas y signos).",
    "nombre_en": "Tabloid / Viral Alarm",
-   "perfil": "Sensacionalista, emotivo y enfático",
+   "perfil": "Sensacionalista, emotivo y asertivo sin fuentes",
    "centro": {
-    "D1": 75.5,
-    "D2": 70.4,
-    "D3": 57.1,
-    "D4": 71.3,
-    "D5": 58.7
+    "D1": 76.7,
+    "D2": 74.7,
+    "D3": 46.4,
+    "D4": 55.5,
+    "D5": 63.3
    },
-   "iml_centro": 66.6,
-   "n": 1180,
-   "proporcion": 0.28780487804878047,
-   "pertenencia_media": 45.29830508474576,
-   "falsas": 672,
-   "tasa_falsas": 0.5694915254237288,
+   "iml_centro": 63.3,
+   "n": 1546,
+   "proporcion": 0.3770731707317073,
+   "pertenencia_media": 45.567593790426905,
+   "falsas": 883,
+   "tasa_falsas": 0.5711513583441138,
    "por_region": {
-    "América Latina": 756,
-    "España": 424
+    "América Latina": 782,
+    "España": 764
    }
   }
  ],
  "correlacion_dimensiones_spearman": {
   "D1": {
    "D1": 1.0,
-   "D2": 0.506,
-   "D3": -0.177,
-   "D4": 0.133,
-   "D5": 0.298
+   "D2": 0.513,
+   "D3": -0.204,
+   "D4": 0.085,
+   "D5": 0.346
   },
   "D2": {
-   "D1": 0.506,
+   "D1": 0.513,
    "D2": 1.0,
-   "D3": -0.101,
+   "D3": -0.111,
    "D4": -0.014,
-   "D5": 0.128
+   "D5": 0.156
   },
   "D3": {
-   "D1": -0.177,
-   "D2": -0.101,
+   "D1": -0.204,
+   "D2": -0.111,
    "D3": 1.0,
-   "D4": 0.165,
-   "D5": -0.064
+   "D4": 0.17,
+   "D5": -0.095
   },
   "D4": {
-   "D1": 0.133,
+   "D1": 0.085,
    "D2": -0.014,
-   "D3": 0.165,
+   "D3": 0.17,
    "D4": 1.0,
-   "D5": -0.08
+   "D5": -0.127
   },
   "D5": {
-   "D1": 0.298,
-   "D2": 0.128,
-   "D3": -0.064,
-   "D4": -0.08,
+   "D1": 0.346,
+   "D2": 0.156,
+   "D3": -0.095,
+   "D4": -0.127,
    "D5": 1.0
   }
  },
  "direccion_empirica": {
   "sens_p_documento": {
    "direccion_a_priori": 1,
-   "auc_falsa": 0.6174003489303064,
+   "auc_falsa": 0.6269571997428731,
    "coincide": true
   },
   "sens_p_media_oraciones": {
    "direccion_a_priori": 1,
-   "auc_falsa": 0.6007158556394682,
+   "auc_falsa": 0.6185018225979044,
    "coincide": true
   },
   "sens_p_max_oraciones": {
    "direccion_a_priori": 1,
-   "auc_falsa": 0.5927209394751225,
+   "auc_falsa": 0.6050807322340008,
    "coincide": true
   },
   "emo_intensidad_media": {
    "direccion_a_priori": 1,
-   "auc_falsa": 0.5680163899089279,
+   "auc_falsa": 0.5680168710593778,
    "coincide": true
   },
   "emo_intensidad_max": {
    "direccion_a_priori": 1,
-   "auc_falsa": 0.5613578691193791,
+   "auc_falsa": 0.5613578691193792,
    "coincide": true
   },
   "emo_ira_media": {
@@ -306,7 +306,7 @@
   },
   "emo_miedo_media": {
    "direccion_a_priori": 1,
-   "auc_falsa": 0.5399718142066406,
+   "auc_falsa": 0.5399722953570906,
    "coincide": true
   },
   "emo_miedo_max": {
@@ -316,153 +316,153 @@
   },
   "emo_sorpresa_media": {
    "direccion_a_priori": 1,
-   "auc_falsa": 0.5400110279683135,
+   "auc_falsa": 0.5400153583223631,
    "coincide": true
   },
   "emo_sorpresa_max": {
    "direccion_a_priori": 1,
-   "auc_falsa": 0.5385764779017221,
+   "auc_falsa": 0.5385761170388847,
    "coincide": true
   },
   "red_sim_max": {
    "direccion_a_priori": 1,
-   "auc_falsa": 0.4531597903841032,
+   "auc_falsa": 0.4466802468891642,
    "coincide": false
   },
   "red_sim_media": {
    "direccion_a_priori": 1,
-   "auc_falsa": 0.4682976888879071,
+   "auc_falsa": 0.46625102384620976,
    "coincide": false
   },
   "red_sim_top3": {
    "direccion_a_priori": 1,
-   "auc_falsa": 0.45014469332386775,
+   "auc_falsa": 0.44511683469002855,
    "coincide": false
   },
   "red_consecutivas_media": {
    "direccion_a_priori": 1,
-   "auc_falsa": 0.4758436010839357,
+   "auc_falsa": 0.4726189307682241,
    "coincide": false
   },
   "orto_mayusculas_sostenidas": {
    "direccion_a_priori": 1,
-   "auc_falsa": 0.5311915402203284,
+   "auc_falsa": 0.5310305953948128,
    "coincide": true
   },
   "orto_proporcion_mayusculas": {
    "direccion_a_priori": 1,
-   "auc_falsa": 0.4961157927049893,
+   "auc_falsa": 0.4961117029261645,
    "coincide": false
   },
   "orto_exclamaciones": {
    "direccion_a_priori": 1,
-   "auc_falsa": 0.5119760752750256,
+   "auc_falsa": 0.5119759549874131,
    "coincide": true
   },
   "orto_interrogaciones": {
    "direccion_a_priori": 1,
-   "auc_falsa": 0.5222990378915603,
+   "auc_falsa": 0.5222989176039478,
    "coincide": true
   },
   "orto_puntos_suspensivos": {
    "direccion_a_priori": 1,
-   "auc_falsa": 0.5156828583416092,
+   "auc_falsa": 0.5156823771911592,
    "coincide": true
   },
   "orto_comillas": {
    "direccion_a_priori": 1,
-   "auc_falsa": 0.4924924892414759,
+   "auc_falsa": 0.4924838285333764,
    "coincide": false
   },
   "ling_intensificadores": {
    "direccion_a_priori": 1,
-   "auc_falsa": 0.5131463534569697,
+   "auc_falsa": 0.5135247782858726,
    "coincide": true
   },
   "ling_pronombres_1p": {
    "direccion_a_priori": 1,
-   "auc_falsa": 0.5502138232599676,
+   "auc_falsa": 0.5499678350924194,
    "coincide": true
   },
   "ling_adjetivos_sustantivos": {
    "direccion_a_priori": 1,
-   "auc_falsa": 0.49527558373172587,
-   "coincide": false
+   "auc_falsa": 0.5104262896756661,
+   "coincide": true
   },
   "ling_atenuadores": {
    "direccion_a_priori": -1,
-   "auc_falsa": 0.5158350221714127,
+   "auc_falsa": 0.5102649839873129,
    "coincide": false
   },
   "ling_verbos_dicendi": {
    "direccion_a_priori": -1,
-   "auc_falsa": 0.4687991976335096,
+   "auc_falsa": 0.4398371883107386,
    "coincide": true
   },
   "ling_cifras": {
    "direccion_a_priori": -1,
-   "auc_falsa": 0.4130289286896541,
+   "auc_falsa": 0.4130302518533915,
    "coincide": true
   },
   "ling_referencias_temporales": {
    "direccion_a_priori": -1,
-   "auc_falsa": 0.4317893455968961,
+   "auc_falsa": 0.4317863384065837,
    "coincide": true
   }
  },
  "asociacion_veracidad": {
   "D1": {
-   "auc_falsa": 0.6116184842606065,
-   "media_falsas": 56.163888888888884,
-   "media_reales": 45.00176678445229
+   "auc_falsa": 0.6248686459271577,
+   "media_falsas": 56.89504357298474,
+   "media_reales": 44.40825971731448
   },
   "D2": {
-   "auc_falsa": 0.5648619675589122,
-   "media_falsas": 53.581644880174295,
+   "auc_falsa": 0.5648623284217495,
+   "media_falsas": 53.58164488017429,
    "media_reales": 47.09553886925794
   },
   "D3": {
-   "auc_falsa": 0.4543645638467401,
-   "media_falsas": 47.48110021786492,
-   "media_reales": 52.04509717314488
+   "auc_falsa": 0.4493774394327813,
+   "media_falsas": 47.2041394335512,
+   "media_reales": 52.266210247349825
   },
   "D4": {
-   "auc_falsa": 0.520137349207449,
-   "media_falsas": 51.112581699346414,
-   "media_reales": 49.09867491166077
+   "auc_falsa": 0.5200363076129548,
+   "media_falsas": 51.10648148148148,
+   "media_reales": 49.10273851590106
   },
   "D5": {
-   "auc_falsa": 0.5981431441834685,
-   "media_falsas": 55.41977124183006,
-   "media_reales": 45.60525618374558
+   "auc_falsa": 0.6156602683279829,
+   "media_falsas": 56.386492374727666,
+   "media_reales": 44.82040636042402
   },
   "IML": {
-   "auc_falsa": 0.5927626792766576,
-   "media_falsas": 52.751633986928105,
-   "media_reales": 47.76872791519435
+   "auc_falsa": 0.602097599444175,
+   "media_falsas": 53.03262527233115,
+   "media_reales": 47.53922261484099
   }
  },
  "tasa_falsas_global": 0.4478048780487805,
  "proyecciones": {
   "pca": {
    "varianza_explicada": [
-    0.3418,
-    0.2323
+    0.356,
+    0.2303
    ],
    "cargas": {
     "PC1": {
-     "D1": 0.652,
-     "D2": 0.578,
-     "D3": -0.281,
-     "D4": 0.0,
-     "D5": 0.403
+     "D1": 0.631,
+     "D2": 0.549,
+     "D3": -0.315,
+     "D4": -0.081,
+     "D5": 0.441
     },
     "PC2": {
-     "D1": 0.205,
-     "D2": 0.128,
-     "D3": 0.552,
-     "D4": 0.787,
-     "D5": -0.13
+     "D1": 0.245,
+     "D2": 0.24,
+     "D3": 0.481,
+     "D4": 0.791,
+     "D5": -0.16
     }
    }
   },
@@ -476,9 +476,9 @@
   },
   "vecindad": {
    "k": 15,
-   "mismo_estilo": 0.8928943089430894,
-   "mismo_estilo_azar": 0.33884164187983346,
-   "misma_clase": 0.5365691056910569,
+   "mismo_estilo": 0.8933983739837399,
+   "mismo_estilo_azar": 0.33661725163593104,
+   "misma_clase": 0.5419349593495935,
    "misma_clase_azar": 0.5054486615110054
   }
  },
